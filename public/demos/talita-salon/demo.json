@@ -1,0 +1,10 @@
+{
+  "name": "Talita Salon",
+  "slug": "talita-salon",
+  "category": "Beauty & Salon",
+  "description": "Landing page salon dengan tampilan elegan, jadwal treatment, dan formulir reservasi.",
+  "url": "/demos/talita-salon/index.html",
+  "thumbnail": "/images/talita-salon.webp",
+  "status": "Available",
+  "featured": false
+}

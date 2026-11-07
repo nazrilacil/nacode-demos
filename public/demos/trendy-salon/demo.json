@@ -1,0 +1,10 @@
+{
+  "name": "Trendy Salon",
+  "slug": "trendy-salon",
+  "category": "Beauty & Salon",
+  "description": "Website profil salon modern di Kotabaru, Yogyakarta. Menampilkan daftar harga, galeri, dan booking langsung via WhatsApp.",
+  "url": "/demos/trendy-salon/index.html",
+  "thumbnail": "/images/trendy-salon.webp",
+  "status": "Available",
+  "featured": false
+}

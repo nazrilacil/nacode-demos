@@ -1,0 +1,10 @@
+{
+  "name": "Rose Beauty",
+  "slug": "rose-beauty",
+  "category": "Beauty & Salon",
+  "description": "Website profesional untuk bisnis salon kecantikan dengan booking online dan galeri layanan.",
+  "url": "/demos/rose-beauty/index.html",
+  "thumbnail": "/images/rose-beauty.webp",
+  "status": "Available",
+  "featured": true
+}

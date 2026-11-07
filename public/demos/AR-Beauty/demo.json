@@ -1,0 +1,10 @@
+{
+  "name": "AR Beauty Care",
+  "slug": "AR-beauty-care",
+  "category": "Beauty & Salon",
+  "description": "Company profile beauty care dengan katalog produk dan kontak WhatsApp langsung.",
+  "url": "/demos/AR-Beauty/index.html",
+  "thumbnail": "/images/AR-beauty-care.webp",
+  "status": "Available",
+  "featured": true
+}

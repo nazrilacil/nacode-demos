@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+   <title>AR Hair & Beauty Salon UNDIP Semarang</title>
+   <meta name="description"
+      content="AR Hair & Beauty Salon UNDIP Semarang: perawatan rambut dan kecantikan yang personal dan nyaman di Tembalang, Semarang.">
+   <meta name="theme-color" content="#080808">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet">
+<style>
+   :root {
+      --black: #080808;
+      --deep: #111;
+      --char: #1a1a1a;
+      --gold: #d4af37;
+      --champ: #e8c875;
+      --light: #f6e3a6;
+      --white: #f8f5ef;
+      --gray: #a5a5a5;
+      --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+      --sans: "Manrope", Inter, system-ui, sans-serif;
+      --pad: clamp(1.25rem, 5vw, 4.5rem);
+   }
+
+   * { box-sizing: border-box; margin: 0 }
+
+   html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+      -webkit-text-size-adjust: 100%;
+   }
+
+   body {
+      background: var(--black);
+      color: var(--white);
+      font: 400 1rem/1.7 var(--sans);
+      overflow-x: hidden;
+      padding-top: env(safe-area-inset-top, 0);
+   }
+
+   body.menu-open { overflow: hidden }
+
+   img { max-width: 100%; display: block }
+   a { color: inherit; text-decoration: none }
+   :focus-visible { outline: 2px solid var(--champ); outline-offset: 3px }
+
+   .ic {
+      width: 1.25em;
+      height: 1.25em;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex: none;
+   }
+
+   .wrap {
+      padding-inline: var(--pad);
+      max-width: 1400px;
+      margin-inline: auto;
+   }
+
+   section { padding-block: clamp(4.5rem, 10vw, 8.5rem) }
+
+   h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: .005em;
+   }
+
+   h2 { font-size: clamp(2.2rem, 5.2vw, 4rem) }
+   .sub { color: var(--gray); max-width: 46ch }
+
+   .gold-line {
+      display: block;
+      width: 64px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin-block: 1.6rem;
+   }
+
+   .tag {
+      font-size: .74rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--champ);
+   }
+
+   /* ===== BUTTON ===== */
+   .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      padding: .95rem 1.7rem;
+      min-height: 48px;
+      border: 1px solid var(--champ);
+      color: #1a1405;
+      font: 600 .82rem/1 var(--sans);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      overflow: hidden;
+      isolation: isolate;
+      background: linear-gradient(115deg, #a8780b 0%, #d4af37 38%, #e8c875 52%, #c99a1f 78%, #a8780b 100%);
+      transition: box-shadow .5s, filter .2s, transform .2s;
+   }
+
+   .btn::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: -1;
+      width: 55%;
+      left: -70%;
+      transform: skewX(-22deg);
+      background: linear-gradient(90deg, transparent, rgba(255, 250, 225, .65), transparent);
+      transition: left .9s cubic-bezier(.3, .6, .2, 1);
+   }
+
+   .btn:hover::before,
+   .btn:focus-visible::before { left: 130% }
+
+   .btn:hover { box-shadow: 0 0 0 1px rgba(232, 200, 117, .4), 0 10px 40px -8px rgba(212, 175, 55, .55) }
+   .btn:active { filter: brightness(.88); transform: translateY(1px) }
+   .btn .ic { width: 1.1em; height: 1.1em; transition: transform .35s }
+   .btn:hover .arr { transform: translate(3px, -3px) }
+   .btn:hover .cal { transform: scale(1.18) }
+
+   .btn.ghost {
+      background: transparent;
+      color: var(--champ);
+      border-color: rgba(232, 200, 117, .5);
+   }
+   .btn.ghost::before { background: linear-gradient(90deg, transparent, rgba(232, 200, 117, .22), transparent) }
+   .btn.sm { padding: .7rem 1.1rem; min-height: 44px; font-size: .72rem }
+
+   /* ===== HEADER / NAV ===== */
+   header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      padding-top: env(safe-area-inset-top, 0);
+      transition: background .4s, border-color .4s;
+      border-bottom: 1px solid transparent;
+   }
+
+   header.s {
+      background: rgba(8, 8, 8, .82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-color: rgba(212, 175, 55, .22);
+   }
+
+   .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      transition: height .4s;
+   }
+
+   header.s .nav { height: 64px }
+
+   .brand { display: flex; align-items: center; flex: none }
+
+   .brand img {
+      height: 54px;
+      width: 54px;
+      object-fit: contain;
+      transition: height .4s, width .4s;
+   }
+
+   header.s .brand img { height: 44px; width: 44px }
+
+   .links {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+   }
+
+   .links a:not(.btn) {
+      position: relative;
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding-block: .5rem;
+      color: var(--white);
+   }
+
+   .links a:not(.btn)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background: var(--champ);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s;
+   }
+
+   .links a.on::after,
+   .links a:not(.btn):hover::after { transform: scaleX(1) }
+
+   /* Hamburger: tiga garis CSS */
+   .burger {
+      display: none;
+      position: relative;
+      z-index: 3;
+      width: 48px;
+      height: 48px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      background: rgba(8, 8, 8, .55);
+      border: 1px solid rgba(232, 200, 117, .6);
+      border-radius: 50%;
+      cursor: pointer;
+      line-height: 0;
+      -webkit-tap-highlight-color: transparent;
+   }
+
+   .burger span {
+      position: relative;
+      display: block;
+      width: 22px;
+      height: 14px;
+   }
+
+   .burger i {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: var(--champ);
+      border-radius: 2px;
+      transition: transform .4s cubic-bezier(.2, .7, .2, 1), opacity .3s;
+   }
+
+   .burger i:nth-child(1) { top: 0 }
+   .burger i:nth-child(2) { top: 6px }
+   .burger i:nth-child(3) { top: 12px }
+
+   .open .burger i:nth-child(1) { transform: translateY(6px) rotate(45deg) }
+   .open .burger i:nth-child(2) { opacity: 0 }
+   .open .burger i:nth-child(3) { transform: translateY(-6px) rotate(-45deg) }
+
+   @media(max-width:900px) {
+      header.s {
+         backdrop-filter: none;
+         -webkit-backdrop-filter: none;
+         background: rgba(8, 8, 8, .82);
+      }
+
+      .burger { display: inline-flex }
+      .nav { position: relative; z-index: 2 }
+
+      .links {
+         position: fixed;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         left: 0;
+         width: 100vw;
+         height: 100vh;
+         height: 100dvh;
+         background: #080808;
+         flex-direction: column;
+         justify-content: center;
+         gap: 1.6rem;
+         padding: 2rem;
+         z-index: 1;
+         opacity: 0;
+         visibility: hidden;
+         transition: opacity .4s, visibility .4s;
+      }
+
+      .open .links { opacity: 1; visibility: visible }
+
+      .links a:not(.btn) {
+         font: 500 2rem/1 var(--serif);
+         letter-spacing: .02em;
+         text-transform: none;
+      }
+
+      .links > .btn.sm { display: none }
+   }
+
+   /* ===== HERO ===== */
+   .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      isolation: isolate;
+   }
+
+   .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: #080808;
+      overflow: hidden;
+   }
+
+   .hero-video,
+   .hero-fallback {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+   }
+
+   .hero-fallback {
+      background: radial-gradient(120% 90% at 70% 30%, #2a2312 0%, #111 45%, #080808 100%);
+   }
+
+   .hero-video {
+      z-index: 1;
+      transform: scale(1.04);
+      animation: heroZoom 24s cubic-bezier(.3, .1, .3, 1) forwards;
+   }
+
+   @keyframes heroZoom { to { transform: scale(1) } }
+
+   .hero-shade {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+         linear-gradient(90deg, rgba(8, 8, 8, .9) 0%, rgba(8, 8, 8, .6) 50%, rgba(8, 8, 8, .3) 100%),
+         linear-gradient(0deg, rgba(8, 8, 8, .9) 0%, rgba(8, 8, 8, 0) 50%);
+   }
+
+   .hero-glow {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(105deg, transparent 30%, rgba(232, 200, 117, .07) 48%, transparent 62%);
+      background-size: 250% 100%;
+      animation: goldSweep 14s ease-in-out infinite;
+      mix-blend-mode: screen;
+   }
+
+   @keyframes goldSweep {
+      0% { background-position: 120% 0 }
+      100% { background-position: -120% 0 }
+   }
+
+   .hero-line {
+      position: absolute;
+      z-index: 2;
+      left: var(--pad);
+      bottom: 22vh;
+      width: 1px;
+      height: 90px;
+      background: linear-gradient(180deg, transparent, var(--gold), transparent);
+      opacity: .6;
+   }
+
+   .hero-inner {
+      padding-bottom: clamp(6rem, 14vh, 9rem);
+      padding-top: 8rem;
+      position: relative;
+      z-index: 3;
+   }
+
+   .hero-copy { max-width: min(640px, 100%) }
+
+   .hero h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(3rem, 7.4vw, 6.6rem);
+      line-height: 1.02;
+      letter-spacing: .003em;
+      color: var(--white);
+      margin-top: 1.2rem;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, .45);
+   }
+
+   .hero h1 .line { display: block }
+
+   .hero h1 .i {
+      font-style: italic;
+      color: var(--champ);
+      padding-left: clamp(1rem, 5vw, 4.5rem);
+   }
+
+   .hero .gold-line { margin-block: 1.8rem 1.4rem; width: 72px }
+
+   .hero p {
+      color: rgba(248, 245, 239, .85);
+      max-width: 42ch;
+      font-size: 1.02rem;
+      margin-bottom: 2.4rem;
+      text-shadow: 0 1px 12px rgba(0, 0, 0, .5);
+   }
+
+   .hero .tag {
+      color: var(--champ);
+      font-size: .72rem;
+      letter-spacing: .32em;
+   }
+
+   .hero .cta { display: flex; flex-wrap: wrap; gap: 1.1rem }
+
+   .hero .btn { transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .6s, filter .3s }
+   .hero .btn:hover { transform: translateY(-2px) }
+   .hero .btn.ghost:hover { background: rgba(232, 200, 117, .08); border-color: var(--champ) }
+
+   .hero .in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: up 1.2s cubic-bezier(.2, .7, .2, 1) forwards;
+   }
+
+   @keyframes up { to { opacity: 1; transform: none } }
+
+   .scroll-cue {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      bottom: 1.3rem;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .8rem;
+      color: var(--champ);
+      font-size: .66rem;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      opacity: .75;
+      min-height: 44px;
+   }
+
+   .scroll-cue i {
+      display: block;
+      width: 1px;
+      height: 38px;
+      background: linear-gradient(180deg, var(--gold), transparent);
+      animation: cueMove 2.6s ease-in-out infinite;
+      transform-origin: top;
+   }
+
+   @keyframes cueMove {
+      0%, 100% { transform: translateY(0); opacity: .4 }
+      50% { transform: translateY(8px); opacity: 1 }
+   }
+
+   @media(max-width:900px) {
+      .hero-shade {
+         background: linear-gradient(0deg, rgba(8, 8, 8, .92) 0%, rgba(8, 8, 8, .6) 55%, rgba(8, 8, 8, .4) 100%);
+      }
+      .hero-inner { padding-top: 6rem }
+      .hero h1 .i { padding-left: 0 }
+      .hero .cta .btn { flex: 1 1 100%; justify-content: center }
+      .hero-line { display: none }
+   }
+
+   @media(max-width:520px) {
+      .hero-video { object-position: 60% center }
+   }
+
+   /* ===== ABOUT ===== */
+   .about .wrap {
+      display: grid;
+      grid-template-columns: 5fr 6fr;
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: end;
+   }
+
+   .frame {
+      position: relative;
+      aspect-ratio: 4/5;
+      background: radial-gradient(120% 90% at 30% 20%, #2a2312, var(--deep) 60%);
+      border: 1px solid rgba(212, 175, 55, .3);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+   }
+
+   .frame::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(212, 175, 55, .18);
+   }
+
+   .ph {
+      display: grid;
+      gap: .6rem;
+      place-items: center;
+      text-align: center;
+      color: var(--gray);
+      font-size: .78rem;
+      padding: 1.5rem;
+      position: relative;
+      z-index: 1;
+   }
+
+   .ph .ic { width: 34px; height: 34px; color: var(--gold); stroke-width: 1 }
+
+   .about h2 { margin-bottom: 0 }
+   .about p { color: var(--gray); max-width: 52ch; margin-top: 1rem }
+   .about p.lead {
+      color: var(--white);
+      font: italic 400 clamp(1.25rem, 2.2vw, 1.65rem)/1.45 var(--serif);
+   }
+
+   @media(max-width:800px) {
+      .about .wrap { grid-template-columns: 1fr }
+      .frame { aspect-ratio: 16/11 }
+   }
+
+   /* ===== SERVICES ===== */
+   .svc .wrap {
+      display: grid;
+      grid-template-columns: 4fr 7fr;
+      gap: clamp(2rem, 6vw, 6rem);
+   }
+
+   .svc .head {
+      position: sticky;
+      top: 110px;
+      align-self: start;
+   }
+
+   .row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.4rem;
+      align-items: center;
+      padding-block: 1.6rem;
+      border-top: 1px solid rgba(212, 175, 55, .22);
+      transition: padding .5s, background .5s;
+   }
+
+   .row:last-child { border-bottom: 1px solid rgba(212, 175, 55, .22) }
+
+   .row:hover {
+      background: linear-gradient(90deg, rgba(212, 175, 55, .07), transparent);
+      padding-left: 1rem;
+   }
+
+   .row .ic {
+      width: 34px;
+      height: 34px;
+      color: var(--gold);
+      stroke-width: 1;
+      transition: transform .5s;
+   }
+
+   .row:hover .ic { transform: scale(1.12) rotate(-6deg) }
+   .row.sc:hover .ic { transform: rotate(-24deg) }
+   .row h3 { font-size: clamp(1.6rem, 2.8vw, 2.2rem) }
+   .row p { color: var(--gray); font-size: .92rem; margin-top: .25rem; max-width: 48ch }
+
+   .go {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      color: var(--champ);
+      font-size: .74rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      min-height: 44px;
+   }
+
+   .go .ic { width: 1em; height: 1em; transition: transform .3s }
+   .go:hover .ic { transform: translate(3px, -3px) }
+   .note { margin-top: 1.4rem; font-size: .8rem; color: var(--gray); max-width: 40ch }
+
+   @media(max-width:860px) {
+      .svc .wrap { grid-template-columns: 1fr }
+      .svc .head { position: static }
+      .row { grid-template-columns: auto 1fr }
+      .row .go { grid-column: 2 }
+   }
+
+   /* ===== PRICING ===== */
+   .price { background: var(--char) }
+   .price .wrap { max-width: 980px }
+   .price h2 { text-align: center }
+
+   .price .gold-line {
+      margin-inline: auto;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      width: 120px;
+   }
+
+   .menu { margin-top: 3rem }
+
+   .item {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 1.2rem 1.6rem;
+      align-items: center;
+      padding: 1.3rem .8rem;
+      border-bottom: 1px solid rgba(248, 245, 239, .08);
+      transition: background .4s;
+   }
+
+   .item:hover { background: rgba(212, 175, 55, .06) }
+   .item h3 { font-size: 1.5rem }
+   .item p { color: var(--gray); font-size: .88rem }
+
+   .amt {
+      font: italic 500 1.2rem var(--serif);
+      color: var(--champ);
+      text-align: right;
+   }
+
+   @media(max-width:640px) {
+      .item { grid-template-columns: 1fr auto }
+      .item .btn { grid-column: 1/-1; justify-content: center }
+   }
+
+   /* ===== GALLERY ===== */
+   .gal h2 { max-width: 14ch }
+
+   .masonry {
+      columns: 3 260px;
+      column-gap: 1rem;
+      margin-top: 3rem;
+   }
+
+   .tile {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+      border: 1px solid rgba(212, 175, 55, .2);
+      background: var(--deep);
+      display: block;
+      width: 100%;
+      padding: 0;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+   }
+
+   .tile .bg {
+      display: grid;
+      place-items: center;
+      transition: transform .9s cubic-bezier(.2, .7, .2, 1);
+   }
+
+   .tile:hover .bg { transform: scale(1.06) }
+
+   .tile::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(212, 175, 55, .28), transparent 60%);
+      opacity: 0;
+      transition: opacity .5s;
+   }
+
+   .tile:hover::after,
+   .tile:focus-visible::after { opacity: 1 }
+   .tile .ph { z-index: 2 }
+
+   .lb {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      background: rgba(8, 8, 8, .94);
+      display: none;
+      place-items: center;
+      padding: 1.5rem;
+   }
+
+   .lb.on { display: grid }
+
+   .lb .box {
+      width: min(560px, 100%);
+      aspect-ratio: 4/5;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      position: relative;
+   }
+
+   .lb button {
+      position: absolute;
+      top: calc(1rem + env(safe-area-inset-top, 0));
+      right: 1rem;
+      background: none;
+      border: 0;
+      color: var(--champ);
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+   }
+
+   .lb button .ic { width: 30px; height: 30px }
+
+   /* ===== WHY ===== */
+   .why h2 { text-align: center }
+
+   .pts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 4rem;
+   }
+
+   .pt {
+      padding: .5rem 1.8rem;
+      border-left: 1px solid rgba(212, 175, 55, .25);
+   }
+
+   .pt:first-child { border-left: 0 }
+
+   .pt .ic {
+      width: 38px;
+      height: 38px;
+      color: var(--gold);
+      stroke-width: 1;
+      margin-bottom: 1.2rem;
+   }
+
+   .pt h3 { font-size: 1.55rem; margin-bottom: .5rem }
+   .pt p { color: var(--gray); font-size: .9rem }
+
+   @media(max-width:900px) {
+      .pts { grid-template-columns: 1fr 1fr; row-gap: 2.5rem }
+      .pt:nth-child(3) { border-left: 0 }
+   }
+
+   @media(max-width:520px) {
+      .pts { grid-template-columns: 1fr }
+      .pt {
+         border-left: 0;
+         border-top: 1px solid rgba(212, 175, 55, .25);
+         padding: 1.6rem 0 0;
+      }
+      .pt:first-child { border-top: 0 }
+   }
+
+   /* ===== CONTACT ===== */
+   .contact { background: linear-gradient(180deg, var(--black), var(--deep)) }
+
+   .contact .wrap {
+      display: grid;
+      grid-template-columns: 5fr 6fr;
+      gap: clamp(2rem, 6vw, 6rem);
+   }
+
+   .info {
+      display: grid;
+      gap: 1.4rem;
+      margin-block: 1.6rem 2.2rem;
+   }
+
+   .info div { display: flex; gap: 1rem; align-items: flex-start }
+   .info .ic { color: var(--gold); margin-top: .2rem }
+   .info b { display: block; font-weight: 500 }
+   .info span { color: var(--gray); font-size: .92rem }
+   .pin:hover .ic { animation: bounce .7s ease }
+
+   @keyframes bounce {
+      40% { transform: translateY(-5px) }
+      70% { transform: translateY(1px) }
+   }
+
+   .map {
+      min-height: 360px;
+      border: 1px solid rgba(212, 175, 55, .3);
+      background: var(--char);
+      position: relative;
+   }
+
+   .map iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(.6) contrast(1.05);
+   }
+
+   .map .ph { height: 100%; min-height: 360px; align-content: center }
+
+   @media(max-width:800px) {
+      .contact .wrap { grid-template-columns: 1fr }
+   }
+
+   /* ===== FOOTER ===== */
+   footer {
+      border-top: 1px solid transparent;
+      border-image: linear-gradient(90deg, transparent, var(--gold), transparent) 1;
+      padding-block: 3.5rem calc(2rem + env(safe-area-inset-bottom, 0));
+   }
+
+   .fgrid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 2.5rem;
+   }
+
+   .fgrid img {
+      width: 92px;
+      height: 92px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+   }
+
+   .fgrid h4 {
+      font: 500 1.3rem var(--serif);
+      margin-bottom: .8rem;
+      color: var(--champ);
+   }
+
+   .fgrid a,
+   .fgrid p {
+      display: block;
+      color: var(--gray);
+      font-size: .9rem;
+      padding-block: .25rem;
+   }
+
+   .fgrid a:hover { color: var(--champ) }
+
+   .copy {
+      margin-top: 2.5rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid rgba(248, 245, 239, .08);
+      color: var(--gray);
+      font-size: .8rem;
+   }
+
+   @media(max-width:700px) {
+      .fgrid { grid-template-columns: 1fr }
+   }
+
+   /* ===== WHATSAPP FLOAT ===== */
+   .wa {
+      position: fixed;
+      right: max(1rem, env(safe-area-inset-right));
+      bottom: max(1rem, env(safe-area-inset-bottom));
+      z-index: 60;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #a8780b, #e8c875);
+      color: #1a1405;
+      border: 1px solid var(--light);
+   }
+
+   .wa .ic { width: 28px; height: 28px }
+
+   .wa::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid var(--champ);
+      animation: pulse 2.8s ease-out infinite;
+   }
+
+   @keyframes pulse {
+      to { transform: scale(1.55); opacity: 0 }
+   }
+
+   /* ===== BRANCHES ===== */
+   .branches { background: var(--deep) }
+
+   .tabs {
+      display: inline-flex;
+      margin-block: 2.5rem 2.2rem;
+      border: 1px solid rgba(212, 175, 55, .4);
+      max-width: 100%;
+   }
+
+   .tabs button {
+      all: unset;
+      box-sizing: border-box;
+      cursor: pointer;
+      min-height: 52px;
+      padding: 0 2.4rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font: 600 .82rem var(--sans);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--champ);
+      transition: background .4s, color .4s;
+   }
+
+   .tabs button + button { border-left: 1px solid rgba(212, 175, 55, .4) }
+   .tabs button:hover { background: rgba(212, 175, 55, .1) }
+
+   .tabs button[aria-selected=true] {
+      background: linear-gradient(115deg, #a8780b, #d4af37 45%, #e8c875);
+      color: #1a1405;
+   }
+
+   .tabs button:focus-visible {
+      outline: 2px solid var(--light);
+      outline-offset: -4px;
+   }
+
+   .tabs .ic { display: none; width: 1em; height: 1em }
+   .tabs [aria-selected=true] .ic { display: block }
+
+   .bp {
+      display: grid;
+      grid-template-columns: 6fr 5fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+   }
+
+   .bp.sw > * { animation: swi .7s cubic-bezier(.2, .7, .2, 1) both }
+   @keyframes swi { from { opacity: 0; transform: translateY(14px) } }
+   .bp .frame { aspect-ratio: 4/3 }
+   .bp .frame img { width: 100%; height: 100%; object-fit: cover }
+   .bp h3 { font-size: clamp(2rem, 3.6vw, 3rem); margin-top: .8rem }
+   .bp dl { display: grid; gap: 1.1rem; margin: 0 0 2rem }
+
+   .bp dt {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--champ);
+   }
+
+   .bp dd { margin: .15rem 0 0; color: var(--gray) }
+
+   @media(max-width:800px) {
+      .bp { grid-template-columns: 1fr }
+      .tabs { display: flex; width: 100% }
+      .tabs button { flex: 1; justify-content: center; padding: 0 1rem }
+      .bp .cta .btn { flex: 1 1 100%; justify-content: center }
+   }
+
+   /* ===== TOAST & REVEAL ===== */
+   .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 6rem;
+      transform: translate(-50%, 20px);
+      background: var(--char);
+      border: 1px solid var(--gold);
+      color: var(--white);
+      padding: .9rem 1.2rem;
+      font-size: .88rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .4s, transform .4s;
+      z-index: 90;
+      max-width: 90vw;
+      text-align: center;
+   }
+
+   .toast.on { opacity: 1; transform: translate(-50%, 0) }
+
+   .rv {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1);
+      transition-delay: var(--d, 0s);
+   }
+
+   .rv.v { opacity: 1; transform: none }
+
+   @media(prefers-reduced-motion:reduce) {
+      *, *::before, *::after {
+         animation: none !important;
+         transition-duration: .01ms !important;
+         scroll-behavior: auto !important;
+      }
+      .rv, .in { opacity: 1; transform: none }
+   }
+</style>
+</head>
+
+<body>
+   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs id="sym"></defs>
+   </svg>
+
+   <header id="hd">
+      <div class="wrap nav">
+         <a class="brand" href="#home" aria-label="AR Hair & Beauty Salon UNDIP, beranda"><img src="./logo.jpg"
+               alt="Logo AR Hair & Beauty Salon UNDIP Semarang" width="54" height="54"></a>
+         <nav class="links" id="links" aria-label="Utama">
+            <a href="#home" class="on">Home</a><a href="#about">About</a><a href="#branches">Branches</a><a
+               href="#services">Services</a><a href="#pricing">Price List</a><a href="#gallery">Gallery</a><a
+               href="#contact">Contact</a>
+            <a class="btn sm" data-wa href="#" target="_blank" rel="noopener"><svg class="ic cal"><use href="#cal" /></svg>Book Appointment</a>
+         </nav>
+<button class="burger" id="bg" aria-label="Buka menu" aria-expanded="false">
+   <span><i></i><i></i><i></i></span>
+</button>
+      </div>
+   </header>
+
+   <main>
+      <section class="hero" id="home">
+         <div class="hero-media" aria-hidden="true">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto"
+               poster="./poster.png" disablepictureinpicture>
+               <source src="./hero.mp4" type="video/mp4">
+            </video>
+            <div class="hero-fallback"></div>
+            <div class="hero-shade"></div>
+            <div class="hero-glow"></div>
+            <span class="hero-line"></span>
+         </div>
+
+         <div class="wrap hero-inner">
+            <div class="hero-copy">
+               <span class="tag in" style="animation-delay:.1s">AR Hair &amp; Beauty Salon UNDIP</span>
+               <h1>
+                  <span class="line in" style="animation-delay:.25s">Your Beauty,</span>
+                  <span class="line i in" style="animation-delay:.45s">Our Signature.</span>
+               </h1>
+               <span class="gold-line in" style="animation-delay:.6s"></span>
+               <p class="in" style="animation-delay:.7s">Discover your beauty with premium hair and beauty care at AR Hair &amp; Beauty Salon.</p>
+               <div class="cta in" style="animation-delay:.9s">
+                  <a class="btn" data-wa href="#" target="_blank" rel="noopener"><svg class="ic cal"><use href="#cal" /></svg>Book Your Appointment</a>
+                  <a class="btn ghost" href="#services">Explore Our Services<svg class="ic arr"><use href="#arrow" /></svg></a>
+               </div>
+            </div>
+         </div>
+
+         <a class="scroll-cue" href="#about" aria-label="Scroll untuk melihat lebih lanjut"><span>Scroll to discover</span><i></i></a>
+      </section>
+
+      <section class="about" id="about">
+         <div class="wrap">
+            <div class="frame rv">
+               <div class="ph"><svg class="ic"><use href="#scissors" /></svg>Slot foto salon<br>Ganti dengan foto asli</div>
+            </div>
+            <div class="rv" style="--d:.15s">
+               <span class="tag">About</span>
+               <h2 style="margin-top:1rem">Beauty Is An Art, We Make It Personal.</h2>
+               <span class="gold-line"></span>
+               <p class="lead">AR Hair &amp; Beauty Salon menghadirkan pengalaman perawatan kecantikan yang mengutamakan kenyamanan dan perhatian personal bagi setiap pelanggan.</p>
+               <p>Hadir di Semarang dan Solo. Setiap kunjungan dimulai dari mendengarkan apa yang Anda inginkan.</p>
+            </div>
+         </div>
+      </section>
+
+      <section class="branches" id="branches">
+         <div class="wrap">
+            <div class="rv"><span class="tag">Branches</span>
+               <h2 style="margin-top:1rem">Find Your Nearest Beauty Studio</h2><span class="gold-line"></span>
+               <p class="sub">Choose your preferred branch and discover the beauty experience closest to you.</p>
+            </div>
+            <div class="tabs" id="tabs" role="tablist" aria-label="Pilih cabang"></div>
+            <div class="bp" id="bp" aria-live="polite"></div>
+         </div>
+      </section>
+
+      <section class="svc" id="services">
+         <div class="wrap">
+            <div class="head rv"><span class="tag">Services</span>
+               <h2 style="margin-top:1rem">Our Signature Services</h2><span class="gold-line"></span>
+               <p class="sub">Tanyakan layanan yang Anda butuhkan, kami bantu pilihkan.</p>
+               <p class="note">Daftar layanan di halaman ini masih contoh dan akan disesuaikan dengan layanan resmi salon.</p>
+            </div>
+            <div id="svcList"></div>
+         </div>
+      </section>
+
+      <section class="price" id="pricing">
+         <div class="wrap">
+            <span class="tag" style="display:block;text-align:center">Price List</span>
+            <h2 style="margin-top:1rem">Beauty Menu &amp; Pricing</h2><span class="gold-line"></span>
+            <div class="menu" id="menu"></div>
+         </div>
+      </section>
+
+      <section class="gal" id="gallery">
+         <div class="wrap">
+            <span class="tag">Gallery</span>
+            <h2 style="margin-top:1rem">Beauty In Every Detail.</h2>
+            <div class="masonry" id="masonry"></div>
+         </div>
+      </section>
+
+      <section class="why">
+         <div class="wrap">
+            <h2 class="rv">Experience The Difference</h2>
+            <div class="pts" id="pts"></div>
+         </div>
+      </section>
+
+      <section class="contact" id="contact">
+         <div class="wrap">
+            <div class="rv">
+               <span class="tag">Contact</span>
+               <h2 style="margin-top:1rem">Find Your Beauty Destination</h2>
+               <span class="gold-line"></span>
+               <div class="info">
+                  <div class="pin"><svg class="ic"><use href="#pin" /></svg><p><b id="cName"></b><span id="cAddr"></span></p></div>
+                  <div><svg class="ic"><use href="#clock" /></svg><p><b>Jam operasional</b><span id="cHours"></span></p></div>
+                  <div><svg class="ic"><use href="#phone" /></svg><p><b>WhatsApp</b><span id="waTxt"></span></p></div>
+               </div>
+               <div class="cta"><a class="btn" data-wa href="#"><svg class="ic"><use href="#msg" /></svg>WhatsApp Booking</a><a class="btn ghost" id="dir" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#nav" /></svg>Get Directions</a></div>
+            </div>
+            <div class="map rv" style="--d:.15s" id="map"></div>
+         </div>
+      </section>
+   </main>
+
+   <footer>
+      <div class="wrap">
+         <div class="fgrid">
+            <div><img src="./logo.jpg" alt="Logo AR Hair & Beauty Salon UNDIP" width="92" height="92" loading="lazy">
+               <p>AR Hair &amp; Beauty Salon<br>Semarang &amp; Solo</p>
+            </div>
+            <div>
+               <h4>Menu</h4><a href="#about">About</a><a href="#branches">Branches</a><a href="#services">Services</a><a href="#pricing">Price List</a><a href="#gallery">Gallery</a>
+            </div>
+            <div>
+               <h4>Kontak</h4>
+               <p id="fLoc"></p><a data-wa href="#" target="_blank" rel="noopener">Chat via WhatsApp</a>
+            </div>
+         </div>
+         <p class="copy">&copy; 2026 AR Hair &amp; Beauty Salon UNDIP Semarang. Halaman contoh desain.</p>
+      </div>
+   </footer>
+
+   <a class="wa" data-wa href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp"><svg class="ic"><use href="#msg" /></svg></a>
+
+   <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Pratinjau galeri">
+      <button id="lbx" aria-label="Tutup"><svg class="ic"><use href="#x" /></svg></button>
+      <div class="box" id="lbbox"></div>
+   </div>
+
+   <script>
+      /* ===== Konfigurasi terpusat: ubah di sini ===== */
+      /* Tambah cabang baru cukup dengan menambah satu objek di sini.
+         phone: format 62812xxxxxxx. mapsEmbed: URL embed Google Maps. image: URL foto cabang. */
+      const BRANCHES = [
+         {id: "semarang", name: "AR Hair & Beauty Salon UNDIP", city: "Semarang", address: "ALAMAT_SEMARANG", phone: "WHATSAPP_SEMARANG", openingHours: "JAM_OPERASIONAL_SEMARANG", mapsUrl: "GOOGLE_MAPS_SEMARANG", mapsEmbed: "", image: ""},
+         {id: "solo", name: "AR Hair & Beauty Salon Solo", city: "Solo", address: "ALAMAT_SOLO", phone: "WHATSAPP_SOLO", openingHours: "JAM_OPERASIONAL_SOLO", mapsUrl: "GOOGLE_MAPS_SOLO", mapsEmbed: "", image: ""}
+      ];
+      const SERVICES = [ // price: null => "Contact us for pricing."
+         {icon: "droplet", name: "Hair Treatment", desc: "Perawatan untuk rambut yang lebih sehat dan lembut.", price: null},
+         {icon: "scissors", name: "Hair Styling", desc: "Potong dan tata rambut sesuai bentuk wajah dan kebutuhan.", price: null, sc: 1},
+         {icon: "palette", name: "Hair Coloring", desc: "Warna rambut yang dikonsultasikan lebih dulu.", price: null},
+         {icon: "sparkles", name: "Facial Treatment", desc: "Perawatan wajah untuk kulit yang segar.", price: null},
+         {icon: "heart", name: "Nail Care", desc: "Perawatan kuku tangan dan kaki.", price: null},
+         {icon: "crown", name: "Beauty Treatment", desc: "Perawatan kecantikan lainnya, tanyakan paket yang tersedia.", price: null}
+      ];
+      const WHY = [
+         ["heart", "Personalized Beauty Care", "Perawatan disesuaikan dengan kebutuhan Anda."],
+         ["sparkles", "Comfortable Experience", "Suasana yang nyaman selama perawatan."],
+         ["crown", "Beauty & Self-Care", "Waktu untuk merawat diri dengan tenang."],
+         ["scissors", "Professional Service", "Ditangani dengan teliti dan rapi."]
+      ];
+      const GALLERY = [["Salon", 4 / 3], ["Hair styling", 4 / 5], ["Beauty treatment", 1], ["Nail care", 3 / 4], ["Hair transformation", 4 / 3], ["Salon", 4 / 5]];
+      const ICONS = {
+         scissors: '<circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/>',
+         sparkles: '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4M22 5h-4M4 17v2M5 18H3"/>',
+         crown: '<path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/>',
+         heart: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+         clock: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+         pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+         phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>',
+         msg: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+         cal: '<path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
+         arrow: '<path d="M7 7h10v10M7 17 17 7"/>',
+         nav: '<polygon points="3 11 22 2 13 21 11 13 3 11"/>', menu: '<path d="M4 6h16M4 12h16M4 18h16"/>', x: '<path d="M18 6 6 18M6 6l12 12"/>',
+         droplet: '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>',
+         palette: '<circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>'
+      };
+      const $ = s => document.querySelector(s), ic = (n, c = "") => `<svg class="ic ${c}"><use href="#${n}"/></svg>`;
+      $("#sym").innerHTML = Object.entries(ICONS).map(([k, v]) => `<symbol id="${k}" viewBox="0 0 24 24">${v}</symbol>`).join("");
+
+      /* render */
+      $("#svcList").innerHTML = SERVICES.map((s, i) => `<div class="row rv ${s.sc ? "sc" : ""}" style="--d:${i * .06}s">${ic(s.icon)}<div><h3>${s.name}</h3><p>${s.desc}</p></div><a class="go" data-wa data-svc="${s.name}" href="#" target="_blank" rel="noopener">Tanya layanan${ic("arrow")}</a></div>`).join("");
+      const fmt = s => {const p = s.price && typeof s.price === "object" ? s.price[cur.id] : s.price; return p ? "Rp " + p.toLocaleString("id-ID") : "Contact us for pricing."};
+      const renderMenu = () => $("#menu").innerHTML = SERVICES.map(s => `<div class="item"><div><h3>${s.name}</h3><p>${s.desc}</p></div><span class="amt">${fmt(s)}</span><a class="btn sm ghost" data-wa data-svc="${s.name}" href="#" target="_blank" rel="noopener">Book</a></div>`).join("");
+      $("#pts").innerHTML = WHY.map((w, i) => `<div class="pt rv" style="--d:${i * .1}s">${ic(w[0])}<h3>${w[1]}</h3><p>${w[2]}</p></div>`).join("");
+      const tiles = [["scissors"], ["sparkles"], ["heart"], ["crown"], ["scissors"], ["sparkles"]];
+      $("#masonry").innerHTML = GALLERY.map((g, i) => `<button class="tile rv" data-i="${i}" aria-label="Perbesar: ${g[0]}"><div class="bg" style="aspect-ratio:${g[1]};background:radial-gradient(110% 90% at ${20 + i * 12}% 15%,#2b2412,var(--deep) 62%)"><div class="ph">${ic(tiles[i][0])}${g[0]}<br>Slot foto</div></div></button>`).join("");
+
+      /* ===== Cabang & WhatsApp ===== */
+      let cur = BRANCHES[0];
+      const isPh = v => !v || /^[A-Z_]+$/.test(v);
+      const waOk = b => /^\d{8,15}$/.test(b.phone);
+      const dirUrl = b => isPh(b.mapsUrl) ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(b.name + " " + b.city) : b.mapsUrl;
+      document.body.insertAdjacentHTML("beforeend", '<div class="toast" id="toast" role="status"></div>');
+      let tt; const toast = m => {const t = $("#toast"); t.textContent = m; t.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("on"), 3800)};
+      document.addEventListener("click", e => {
+         const a = e.target.closest("[data-wa]"); if (!a) return; e.preventDefault();
+         if (!waOk(cur)) return toast("Nomor WhatsApp cabang " + cur.city + " perlu dikonfigurasi.");
+         const m = `Halo AR Hair & Beauty Salon, saya ingin bertanya mengenai layanan dan melakukan reservasi di cabang ${cur.city}.` + (a.dataset.svc ? ` Layanan yang saya minati: ${a.dataset.svc}.` : "");
+         window.open("https://wa.me/" + cur.phone + "?text=" + encodeURIComponent(m), "_blank", "noopener")
+      });
+      $("#tabs").innerHTML = BRANCHES.map(b => `<button role="tab" data-id="${b.id}" aria-selected="false">${ic("pin")}${b.city}</button>`).join("");
+      const setBranch = (id, first) => {
+         cur = BRANCHES.find(b => b.id === id) || BRANCHES[0];
+         document.querySelectorAll("#tabs button").forEach(t => {const on = t.dataset.id === cur.id; t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1});
+         const addr = isPh(cur.address) ? "Alamat cabang akan ditambahkan." : cur.address, hrs = isPh(cur.openingHours) ? "Jam operasional akan ditambahkan." : cur.openingHours, tel = waOk(cur) ? "+" + cur.phone : "Nomor WhatsApp cabang belum dikonfigurasi.", dir = dirUrl(cur);
+         const bp = $("#bp"); bp.classList.remove("sw"); void bp.offsetWidth;
+         bp.innerHTML = `<div class="frame">${cur.image ? `<img src="${cur.image}" alt="Cabang ${cur.city}">` : `<div class="ph">${ic("scissors")}Slot foto cabang ${cur.city}<br>Ganti dengan foto asli</div>`}</div><div><span class="tag">${cur.city}</span><h3>${cur.name}</h3><span class="gold-line"></span><dl><div><dt>Alamat</dt><dd>${addr}</dd></div><div><dt>Jam operasional</dt><dd>${hrs}</dd></div><div><dt>WhatsApp</dt><dd>${tel}</dd></div></dl><div class="cta"><a class="btn" data-wa href="#">${ic("cal", "cal")}Book di ${cur.city}</a><a class="btn ghost" href="${dir}" target="_blank" rel="noopener">${ic("nav")}Get Directions</a></div></div>`;
+         if (!first) bp.classList.add("sw");
+         $("#cName").textContent = cur.name; $("#cAddr").innerHTML = cur.city + "<br>" + addr; $("#cHours").textContent = hrs; $("#waTxt").textContent = tel; $("#dir").href = dir; $("#fLoc").textContent = cur.city;
+         $("#map").innerHTML = cur.mapsEmbed ? `<iframe src="${cur.mapsEmbed}" loading="lazy" title="Peta cabang ${cur.city}"></iframe>` : `<div class="ph">${ic("pin")}Peta cabang ${cur.city} akan ditampilkan di sini<br><a class="go" href="${dir}" target="_blank" rel="noopener">Cari di Google Maps${ic("arrow")}</a></div>`;
+         renderMenu()
+      };
+      $("#tabs").onclick = e => {const b = e.target.closest("button"); if (b && b.dataset.id !== cur.id) setBranch(b.dataset.id)};
+      $("#tabs").onkeydown = e => {if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return; const i = BRANCHES.indexOf(cur), n = BRANCHES[(i + (e.key === "ArrowRight" ? 1 : BRANCHES.length - 1)) % BRANCHES.length]; setBranch(n.id); $(`#tabs [data-id="${n.id}"]`).focus()};
+      setBranch(BRANCHES[0].id, true);
+
+      /* nav */
+      const hd = $("#hd"), bg = $("#bg");
+      const sc = () => hd.classList.toggle("s", scrollY > 30); sc(); addEventListener("scroll", sc, {passive: true});
+      bg.onclick = () => {const o = hd.classList.toggle("open"); bg.setAttribute("aria-expanded", o); document.body.style.overflow = o ? "hidden" : ""};
+      document.querySelectorAll("#links a").forEach(a => a.addEventListener("click", () => {hd.classList.remove("open"); bg.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""}));
+      const secs = [...document.querySelectorAll("section[id]")], lk = [...document.querySelectorAll("#links a[href^='#']:not(.btn)")];
+      const spy = new IntersectionObserver(es => es.forEach(e => {if (e.isIntersecting) lk.forEach(l => l.classList.toggle("on", l.getAttribute("href") === "#" + e.target.id))}), {rootMargin: "-45% 0px -50% 0px"});
+      secs.forEach(s => spy.observe(s));
+
+      /* reveal */
+      const io = new IntersectionObserver(es => es.forEach(e => {if (e.isIntersecting) {e.target.classList.add("v"); io.unobserve(e.target)}}), {threshold: .12});
+      document.querySelectorAll(".rv").forEach(el => io.observe(el));
+
+      /* lightbox */
+      const lb = $("#lb"); let last;
+      document.querySelectorAll(".tile").forEach(t => t.onclick = () => {last = t; const g = GALLERY[t.dataset.i]; $("#lbbox").innerHTML = `<div class="ph">${ic(tiles[t.dataset.i][0])}${g[0]}<br>Slot foto</div>`; lb.classList.add("on"); $("#lbx").focus()});
+      const close = () => {lb.classList.remove("on"); last && last.focus()};
+      $("#lbx").onclick = close;
+      lb.onclick = e => {if (e.target === lb) close()};
+      addEventListener("keydown", e => {if (e.key === "Escape" && lb.classList.contains("on")) close()});
+
+      /* hero video: cukup laporkan status di console, elemen tetap ada */
+      (() => {
+         const v = document.querySelector(".hero-video");
+         if (!v) return;
+         v.addEventListener("error", () => console.warn("Video hero gagal dimuat:", v.currentSrc));
+         if (matchMedia("(prefers-reduced-motion:reduce)").matches) { v.pause(); return; }
+         const p = v.play();
+         if (p && p.catch) p.catch(err => console.warn("Autoplay diblokir:", err));
+      })();
+   </script>
+</body>
+
+</html>

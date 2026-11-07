@@ -1,0 +1,10 @@
+{
+  "name": "IJM Motor",
+  "slug": "ijm-motor",
+  "category": "Otomotif",
+  "description": "Company profile Automotive dengan katalog produk dan kontak WhatsApp langsung.",
+  "url": "/demos/IJM-Motor/index.html",
+  "thumbnail": "/images/ijm.webp",
+  "status": "Available",
+  "featured": true
+}
