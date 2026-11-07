@@ -1,0 +1,3737 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Win Salon — Salon Rambut &amp; Kecantikan Karawaci Tangerang</title>
+<meta name="description" content="Win Salon Karawaci Tangerang (Rating 4,7 dari 128 Ulasan). Layanan potong rambut dewasa & anak, smoothing colour, highlight, keratin, nail extension, dan produk import." />
+<meta property="og:title" content="Win Salon — Salon Rambut &amp; Kecantikan Karawaci Tangerang" />
+<meta property="og:description" content="Rating 4,7 (128 Ulasan Google) • Jl. Moh. Toha No.37 Karawaci, Kota Tangerang. Telp/WA: 0818-0854-1689." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/jpeg" href="/assets/aistudio/WhatsApp_Image_2026-11-02_at_14.03.30_1e11f1ca.jpeg" />
+
+<!-- Google Fonts: Inter & Playfair Display -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+  <style>
+    /* ============================================================
+   WIN SALON — BRAND DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Brand Colors */
+  --primary: #164A91;
+  --primary-dark: #102D50;
+  --primary-light: #EAF1FA;
+  --secondary: #D5E2F2;
+
+  /* Surfaces & Background */
+  --bg: #FCFBF9;
+  --surface: #FFFFFF;
+
+  /* Typography Colors */
+  --text: #20242A;
+  --text-2: #6B7280;
+
+  /* Borders & Dividers */
+  --line: #E9E5DE;
+  --line-blue: #C9D9EE;
+
+  /* Semantic Feedback Only */
+  --success: #15803D;
+  --warning: #B45309;
+  --error: #DC2626;
+  --info: #2563EB;
+
+  /* Google Star Color */
+  --star-gold: #EA580C;
+  --star-amber: #F59E0B;
+
+  /* Radius & Shadows */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(16, 45, 80, 0.05), 0 8px 24px -12px rgba(16, 45, 80, 0.12);
+  --shadow-md: 0 16px 40px -16px rgba(16, 45, 80, 0.18);
+  --shadow-lg: 0 24px 50px -12px rgba(16, 45, 80, 0.25);
+
+  /* Motion Timing & Easing */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-fast: 180ms;
+  --t-ui: 280ms;
+  --t-reveal: 520ms;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  color: var(--text);
+}
+p {
+  margin: 0;
+}
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Lucide icon base */
+.lucide {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.6;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ============================================================
+   LAYOUT SYSTEM
+   ============================================================ */
+.wrap {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+@media (min-width: 768px) {
+  .wrap { padding-inline: 32px; }
+}
+@media (min-width: 1024px) {
+  .wrap { padding-inline: 40px; }
+}
+
+.section {
+  padding-block: 64px;
+}
+@media (min-width: 768px) {
+  .section { padding-block: 88px; }
+}
+@media (min-width: 1024px) {
+  .section { padding-block: 100px; }
+}
+
+.section--soft {
+  background-color: var(--primary-light);
+}
+.section--surface {
+  background-color: var(--surface);
+  border-block: 1px solid var(--line);
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+.eyebrow::before {
+  content: "";
+  width: 20px;
+  height: 1.5px;
+  background-color: var(--primary);
+  display: inline-block;
+}
+.h1 {
+  font-size: clamp(2.15rem, 4.8vw, 3.4rem);
+  line-height: 1.1;
+  color: var(--primary-dark);
+}
+.h2 {
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  line-height: 1.2;
+}
+.h3 {
+  font-size: clamp(1.125rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+}
+.lead {
+  color: var(--text-2);
+  font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
+  max-width: 60ch;
+  line-height: 1.68;
+}
+.section-head {
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+.section-head .lead {
+  margin-top: 14px;
+}
+@media (min-width: 768px) {
+  .section-head { margin-bottom: 52px; }
+}
+
+/* ============================================================
+   GOOGLE RATING BADGES & QUICK ACTIONS
+   ============================================================ */
+.google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--surface);
+  border: 1px solid var(--line-blue);
+  border-radius: 9999px;
+  padding: 6px 14px;
+  box-shadow: 0 1px 2px rgba(16, 45, 80, 0.04);
+  font-size: 0.8125rem;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+.google-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--star-amber);
+}
+.google-stars .lucide {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+.google-score {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.google-count {
+  color: var(--text-2);
+  font-size: 0.75rem;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  height: 46px;
+  padding-inline: 22px;
+  border-radius: var(--r-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transition: background-color var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              color var(--t-fast) var(--ease),
+              transform var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease);
+}
+.btn .lucide {
+  width: 17px;
+  height: 17px;
+}
+
+.btn--primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+.btn--primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -8px rgba(16, 45, 80, 0.45);
+}
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  border-color: var(--line-blue);
+  color: var(--primary);
+}
+.btn--secondary:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.btn--on-dark {
+  background-color: #FFFFFF;
+  color: var(--primary-dark);
+}
+.btn--on-dark:hover {
+  background-color: var(--secondary);
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #FFFFFF;
+}
+.btn--ghost:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.btn--sm {
+  height: 38px;
+  padding-inline: 16px;
+  font-size: 0.8125rem;
+}
+
+/* ============================================================
+   TOP NOTICE / LIVE STATUS BAR
+   ============================================================ */
+.status-bar {
+  background-color: var(--primary-dark);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  padding-block: 7px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.status-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.95);
+}
+.status-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #22C55E;
+}
+.status-indicator--closed {
+  background-color: #F59E0B;
+}
+.status-meta {
+  display: none;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+@media (min-width: 640px) {
+  .status-meta { display: flex; }
+}
+
+/* ============================================================
+   HEADER & NAVIGATION (SPACIOUS & FULLY RESPONSIVE)
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(252, 251, 249, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--t-ui) var(--ease),
+              background-color var(--t-ui) var(--ease),
+              box-shadow var(--t-ui) var(--ease);
+}
+.site-header.is-scrolled {
+  border-bottom-color: var(--line);
+  background-color: rgba(252, 251, 249, 0.98);
+  box-shadow: 0 4px 20px -8px rgba(16, 45, 80, 0.08);
+}
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 76px;
+}
+@media (min-width: 1080px) {
+  .nav-row {
+    height: 84px;
+    gap: 28px;
+  }
+}
+
+/* Brand Lockup with Official Logo & Vector Fallback */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.brand-logo-frame {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-sm);
+  background-color: #FFFFFF;
+  border: 1px solid var(--line-blue);
+  overflow: hidden;
+  padding: 3px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 1px 3px rgba(16, 45, 80, 0.06);
+  transition: transform var(--t-fast) var(--ease);
+  position: relative;
+  flex-shrink: 0;
+}
+.brand:hover .brand-logo-frame {
+  transform: scale(1.04);
+}
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.brand-logo-svg {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+.brand-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--primary-dark);
+  line-height: 1.1;
+}
+.brand-sub {
+  font-size: 0.65625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-top: 2px;
+}
+
+/* Desktop Navigation Links */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: clamp(16px, 2.2vw, 32px);
+  margin-inline: auto;
+}
+@media (min-width: 1080px) {
+  .nav-links {
+    display: flex;
+  }
+}
+.nav-link {
+  position: relative;
+  font-size: 0.90625rem;
+  font-weight: 500;
+  color: var(--text-2);
+  padding: 8px 4px;
+  transition: color var(--t-fast) var(--ease);
+  white-space: nowrap;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-ui) var(--ease);
+}
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Nav Actions - Spacious & Uncrowded */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Header Action Buttons Responsiveness */
+.btn-header-phone {
+  display: inline-flex;
+}
+.btn-header-phone .btn-phone-text {
+  display: none;
+}
+@media (min-width: 1260px) {
+  .btn-header-phone .btn-phone-text {
+    display: inline;
+  }
+}
+
+.btn-header-consult {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .btn-header-consult {
+    display: inline-flex;
+  }
+}
+
+.btn-header-wa {
+  display: inline-flex;
+}
+@media (max-width: 520px) {
+  .btn-header-wa span {
+    display: none;
+  }
+  .btn-header-wa {
+    padding-inline: 12px;
+  }
+}
+
+/* Mobile Hamburger Button */
+.burger-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-sm);
+  display: grid;
+  place-items: center;
+  color: var(--primary-dark);
+  border: 1px solid var(--line-blue);
+  background-color: var(--surface);
+  transition: background-color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+  flex-shrink: 0;
+}
+.burger-btn:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+}
+@media (min-width: 1080px) {
+  .burger-btn {
+    display: none;
+  }
+}
+
+/* Mobile Dropdown Panel */
+.mobile-nav {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows var(--t-ui) var(--ease);
+  border-top: 1px solid transparent;
+}
+.mobile-nav.is-open {
+  grid-template-rows: 1fr;
+  border-top-color: var(--line);
+}
+.mobile-nav__inner {
+  overflow: hidden;
+}
+@media (min-width: 1080px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 4px 24px;
+}
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px solid var(--line);
+  transition: color var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease);
+  border-radius: var(--r-sm);
+}
+.mobile-nav-link:hover {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+.mobile-nav-link .lucide {
+  color: var(--text-2);
+}
+.mobile-nav-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+.mobile-nav-actions .btn {
+  width: 100%;
+}
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 4px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px solid var(--line);
+  transition: color var(--t-fast) var(--ease);
+}
+.mobile-nav-link:hover {
+  color: var(--primary);
+}
+.mobile-nav-link .lucide {
+  color: var(--text-2);
+}
+.mobile-nav .btn {
+  margin-top: 14px;
+  width: 100%;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  padding-block: 36px 56px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .hero { padding-block: 56px 80px; }
+}
+@media (min-width: 1024px) {
+  .hero { padding-block: 68px 92px; }
+}
+
+.hero-grid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+  }
+}
+
+.hero-copy {
+  max-width: 580px;
+}
+.hero-title {
+  margin-bottom: 18px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--primary);
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+@media (max-width: 440px) {
+  .hero-actions .btn { width: 100%; }
+}
+
+/* Hero Stats Strip */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 36px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.hero-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+}
+.hero-stat-desc {
+  font-size: 0.78125rem;
+  color: var(--text-2);
+  margin-top: 2px;
+}
+
+/* Hero Visual Card */
+.hero-visual {
+  position: relative;
+}
+.hero-card {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background-color: var(--secondary);
+  aspect-ratio: 4 / 4.7;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--line-blue);
+}
+.hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 800ms var(--ease);
+}
+.hero-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Floating Badges on Hero */
+.hero-floating-logo {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--r-sm);
+  padding: 8px 14px;
+  box-shadow: var(--shadow-sm);
+}
+.hero-floating-logo img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.hero-floating-logo span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary-dark);
+}
+
+.hero-chip-bottom {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--r-md);
+  padding: 12px 18px;
+  box-shadow: var(--shadow-sm);
+}
+.hero-chip-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-chip-info .lucide {
+  color: var(--primary);
+  width: 18px;
+  height: 18px;
+}
+.hero-chip-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+.hero-chip-sub {
+  font-size: 0.72rem;
+  color: var(--text-2);
+}
+.hero-chip-link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* ============================================================
+   GOOGLE QUICK BAR / RATINGS OVERVIEW
+   ============================================================ */
+.google-overview-bar {
+  display: grid;
+  gap: 16px;
+  background-color: var(--surface);
+  border: 1px solid var(--line-blue);
+  border-radius: var(--r-md);
+  padding: 20px 24px;
+  margin-top: 32px;
+  box-shadow: var(--shadow-sm);
+}
+@media (min-width: 768px) {
+  .google-overview-bar {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 28px;
+  }
+}
+.google-stat-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.google-stat-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1;
+}
+.google-stat-stars {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.google-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-2);
+}
+.google-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ============================================================
+   SERVICE LIST & PRICING
+   ============================================================ */
+/* ============================================================
+   SERVICE LIST & PRICING (FULLY RESPONSIVE)
+   ============================================================ */
+.service-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .service-toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .filter-bar {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+}
+.filter-btn {
+  height: 38px;
+  padding-inline: 16px;
+  border-radius: var(--r-sm);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-2);
+  border: 1px solid var(--line);
+  background-color: var(--surface);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all var(--t-fast) var(--ease);
+}
+.filter-btn:hover {
+  color: var(--primary);
+  border-color: var(--line-blue);
+  background-color: var(--primary-light);
+}
+.filter-btn.is-active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Search Box */
+.search-box {
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .search-box {
+    width: auto;
+    min-width: 260px;
+  }
+}
+.search-input {
+  width: 100%;
+  height: 38px;
+  padding: 6px 14px 6px 36px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background-color: var(--surface);
+  font-size: 0.8125rem;
+  color: var(--text);
+  transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(22, 74, 145, 0.12);
+}
+.search-icon {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-2);
+  pointer-events: none;
+}
+
+/* Service Items — Mobile First Card with Full-Width Description */
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+@media (min-width: 768px) {
+  .service-list {
+    display: block;
+    border-top: 1px solid var(--line);
+    gap: 0;
+  }
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: start;
+  gap: 10px 14px;
+  padding: 16px 14px;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  box-shadow: 0 1px 3px rgba(16, 45, 80, 0.04);
+  transition: background-color var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease),
+              box-shadow var(--t-fast) var(--ease);
+}
+.service-item:hover {
+  background-color: #FFFFFF;
+  border-color: var(--line-blue);
+  box-shadow: 0 4px 12px -2px rgba(16, 45, 80, 0.08);
+}
+
+.service-ico {
+  grid-column: 1;
+  grid-row: 1;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--secondary);
+  flex-shrink: 0;
+  transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+.service-item:hover .service-ico {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+.service-ico .lucide {
+  width: 19px;
+  height: 19px;
+}
+
+.service-body {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  width: 100%;
+}
+.service-name-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  margin-bottom: 6px;
+}
+.service-name {
+  font-size: 0.984375rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  line-height: 1.35;
+}
+.service-tag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background-color: var(--secondary);
+  color: var(--primary-dark);
+  white-space: nowrap;
+}
+.service-desc {
+  font-size: 0.8125rem;
+  color: var(--text-2);
+  line-height: 1.55;
+  width: 100%;
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Service Side on Mobile: Full-width footer strip with clear price & CTA button */
+.service-side {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  margin-top: 2px;
+  border-top: 1px dashed var(--line);
+  width: 100%;
+}
+
+.price-val {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.price-ask {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+.price-ask .lucide {
+  width: 14px;
+  height: 14px;
+}
+
+.service-action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--secondary);
+  border-radius: var(--r-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all var(--t-fast) var(--ease);
+}
+.service-action-link .lucide {
+  width: 13px;
+  height: 13px;
+  transition: transform var(--t-fast) var(--ease);
+}
+.service-action-link:hover {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+.service-action-link:hover .lucide {
+  transform: translate(2px, -2px);
+}
+
+/* Desktop Restyling (≥ 768px): Sleek, Spacious 3-Column Rows */
+@media (min-width: 768px) {
+  .service-item {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    align-items: center;
+    gap: 22px;
+    padding: 20px 14px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 0;
+  }
+  .service-item:hover {
+    background-color: var(--primary-light);
+    border-bottom-color: var(--line);
+    box-shadow: none;
+  }
+  .service-ico {
+    grid-column: auto;
+    grid-row: auto;
+    width: 44px;
+    height: 44px;
+  }
+  .service-body {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .service-desc {
+    font-size: 0.84375rem;
+    max-width: 62ch;
+  }
+  .service-side {
+    grid-column: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: right;
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+    min-width: 110px;
+    gap: 4px;
+  }
+  .service-action-link {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-size: 0.78125rem;
+  }
+  .service-action-link:hover {
+    background-color: transparent;
+    color: var(--primary-dark);
+  }
+}
+
+.service-note-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 14px 18px;
+  background-color: var(--primary-light);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--secondary);
+  font-size: 0.8125rem;
+  color: var(--primary-dark);
+  line-height: 1.5;
+}
+.service-note-box .lucide {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  color: var(--primary);
+}
+
+/* ============================================================
+   TESTIMONIALS CAROUSEL
+   ============================================================ */
+.testimonial-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+.carousel-nav-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.carousel-arrow-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-sm);
+  display: grid;
+  place-items: center;
+  background-color: var(--surface);
+  border: 1px solid var(--line-blue);
+  color: var(--primary);
+  transition: all var(--t-fast) var(--ease);
+}
+.carousel-arrow-btn:hover:not(:disabled) {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+.carousel-arrow-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+.carousel-arrow-btn .lucide {
+  width: 18px;
+  height: 18px;
+}
+
+.testimonial-viewport {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-block: 4px 8px;
+}
+.testimonial-track {
+  display: flex;
+  transition: transform var(--t-ui) var(--ease);
+  will-change: transform;
+}
+.testimonial-slide {
+  flex: 0 0 100%;
+  padding-inline: 6px;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .testimonial-slide {
+    flex: 0 0 50%;
+    padding-inline: 10px;
+  }
+}
+@media (min-width: 1100px) {
+  .testimonial-slide {
+    flex: 0 0 33.333%;
+    padding-inline: 12px;
+  }
+}
+
+.testimonial-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--t-ui) var(--ease),
+              box-shadow var(--t-ui) var(--ease),
+              transform var(--t-ui) var(--ease);
+}
+.testimonial-card:hover {
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.testimonial-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.star-rating {
+  display: inline-flex;
+  gap: 3px;
+  color: var(--star-amber);
+}
+.star-rating .lucide {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+.treatment-badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--line-blue);
+  white-space: nowrap;
+}
+
+.testimonial-quote {
+  font-size: 0.90625rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 22px;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.testimonial-author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.author-avatar-initials {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--secondary);
+  display: grid;
+  place-items: center;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+.author-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+.author-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-2);
+}
+.verified-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--primary);
+  font-weight: 500;
+}
+.verified-tag .lucide {
+  width: 12px;
+  height: 12px;
+}
+
+/* Dots Pagination */
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--line-blue);
+  border: 0;
+  padding: 0;
+  transition: all var(--t-fast) var(--ease);
+  cursor: pointer;
+}
+.carousel-dot:hover {
+  background-color: var(--primary);
+}
+.carousel-dot.is-active {
+  width: 24px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+/* ============================================================
+   GALLERY & LIGHTBOX
+   ============================================================ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .gallery-item--feature {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  background-color: var(--secondary);
+  aspect-ratio: 1 / 1;
+  display: block;
+  cursor: pointer;
+  border: 1px solid var(--line);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16, 45, 80, 0.75), transparent 60%);
+  opacity: 0;
+  transition: opacity var(--t-ui) var(--ease);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+.gallery-item-caption {
+  color: #FFFFFF;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  background-color: rgba(16, 45, 80, 0.88);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--t-ui) var(--ease);
+}
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lightbox-content {
+  position: relative;
+  max-width: 820px;
+  max-height: 85vh;
+  background-color: var(--surface);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.lightbox-img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  background-color: #000;
+}
+.lightbox-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background-color: var(--surface);
+  border-top: 1px solid var(--line);
+}
+.lightbox-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #FFFFFF;
+  display: grid;
+  place-items: center;
+  transition: background-color var(--t-fast) var(--ease);
+}
+.lightbox-close:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* ============================================================
+   FEATURES & PHILOSOPHY
+   ============================================================ */
+.feature-grid {
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .feature-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .feature-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.feature-card {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 26px 22px;
+  transition: border-color var(--t-ui) var(--ease),
+              box-shadow var(--t-ui) var(--ease),
+              transform var(--t-ui) var(--ease);
+}
+.feature-card:hover {
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px);
+}
+.feature-ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  margin-bottom: 18px;
+}
+.feature-ico .lucide {
+  width: 20px;
+  height: 20px;
+}
+.feature-card h3 {
+  font-size: 1.0625rem;
+  margin-bottom: 8px;
+}
+.feature-card p {
+  font-size: 0.84375rem;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   LOCATION & SCHEDULE
+   ============================================================ */
+.visit-grid {
+  display: grid;
+  gap: 36px;
+}
+@media (min-width: 900px) {
+  .visit-grid {
+    grid-template-columns: 1fr 1.15fr;
+    gap: 56px;
+    align-items: start;
+  }
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 10px;
+}
+.info-row {
+  display: flex;
+  gap: 16px;
+}
+.info-ico {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--surface);
+  color: var(--primary);
+  border: 1px solid var(--secondary);
+}
+.info-ico .lucide {
+  width: 18px;
+  height: 18px;
+}
+.info-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin-bottom: 5px;
+}
+.info-value {
+  font-size: 0.9375rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+.info-value a {
+  color: var(--primary);
+  font-weight: 500;
+  border-bottom: 1px solid var(--line-blue);
+  transition: border-color var(--t-fast) var(--ease);
+}
+.info-value a:hover {
+  border-bottom-color: var(--primary);
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-top: 2px;
+}
+.hours-table td {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+  color: var(--text-2);
+}
+.hours-table td:last-child {
+  text-align: right;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.hours-table tr.is-today td {
+  color: var(--primary-dark);
+}
+.hours-table tr.is-today td:first-child::after {
+  content: " (Hari ini)";
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+.hours-table tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Map Card */
+.map-card {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--secondary);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.map-frame {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  display: block;
+  background-color: var(--secondary);
+}
+@media (min-width: 768px) {
+  .map-frame { height: 380px; }
+}
+.map-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+.map-foot p {
+  font-size: 0.8125rem;
+  color: var(--text-2);
+}
+.link-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary);
+  transition: gap var(--t-fast) var(--ease);
+}
+.link-inline:hover {
+  gap: 9px;
+}
+.link-inline .lucide {
+  width: 15px;
+  height: 15px;
+}
+
+/* ============================================================
+   CALL TO ACTION BAND
+   ============================================================ */
+.cta-band {
+  background-color: var(--primary-dark);
+  border-radius: var(--r-lg);
+  padding: 48px 24px;
+  text-align: center;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (min-width: 768px) {
+  .cta-band { padding: 68px 48px; }
+}
+.cta-band h2 {
+  color: #FFFFFF;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  margin-bottom: 14px;
+}
+.cta-band p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  max-width: 54ch;
+  margin-inline: auto;
+  line-height: 1.65;
+}
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: 52px 32px;
+  background-color: var(--bg);
+}
+.footer-grid {
+  display: grid;
+  gap: 36px;
+}
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 44px;
+  }
+}
+.footer-about p {
+  font-size: 0.84375rem;
+  color: var(--text-2);
+  margin-top: 16px;
+  max-width: 38ch;
+  line-height: 1.68;
+}
+.footer-col h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin-bottom: 16px;
+}
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-col a {
+  font-size: 0.875rem;
+  color: var(--text);
+  transition: color var(--t-fast) var(--ease);
+}
+.footer-col a:hover {
+  color: var(--primary);
+}
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  font-size: 0.78125rem;
+  color: var(--text-2);
+}
+
+/* ============================================================
+   CONSULTATION MODAL
+   ============================================================ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(16, 45, 80, 0.6);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--t-ui) var(--ease);
+}
+.modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-card {
+  width: 100%;
+  max-width: 540px;
+  background-color: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line-blue);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transform: translateY(16px);
+  transition: transform var(--t-ui) var(--ease);
+}
+.modal-backdrop.is-open .modal-card {
+  transform: translateY(0);
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  background-color: var(--bg);
+}
+.modal-title {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+}
+.modal-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  color: var(--text-2);
+  transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+.modal-close-btn:hover {
+  background-color: var(--line);
+  color: var(--text);
+}
+.modal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-label {
+  font-size: 0.78125rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background-color: var(--surface);
+  font-size: 0.875rem;
+  color: var(--text);
+  transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(22, 74, 145, 0.12);
+}
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: var(--bg);
+}
+
+/* ============================================================
+   FLOATING QUICK WHATSAPP BUTTON
+   ============================================================ */
+.floating-wa {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: var(--r-sm);
+  background-color: var(--primary);
+  color: #FFFFFF;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px -6px rgba(16, 45, 80, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+.floating-wa:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -6px rgba(16, 45, 80, 0.6);
+}
+
+/* ============================================================
+   REVEAL ON SCROLL ANIMATION
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--t-reveal) var(--ease), transform var(--t-reveal) var(--ease);
+  will-change: opacity, transform;
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   ACCESSIBILITY & REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .hero-card img { animation: none; }
+}
+  </style>
+
+<!-- ============================ STATUS BAR ============================ -->
+<aside class="status-bar" aria-label="Status operasional salon">
+  <div class="wrap status-bar__inner">
+    <div class="status-pill">
+      <span class="status-indicator" id="statusDot" aria-hidden="true"></span>
+      <span id="statusText">Buka · Tutup pukul 19.00</span>
+    </div>
+    <div class="status-meta">
+      <span><i data-lucide="map-pin"></i> Ps. Baru, Karawaci, Kota Tangerang</span>
+      <span>•</span>
+      <a href="tel:+6281808541689" style="color:#fff;text-decoration:underline;">
+        <i data-lucide="phone"></i> 0818-0854-1689
+      </a>
+      <span>•</span>
+      <span>Rating 4,7 (128 Ulasan Google)</span>
+    </div>
+  </div>
+</aside>
+
+<!-- ============================ HEADER / NAV ============================ -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <div class="nav-row">
+
+      <!-- Official Win Salon Brand Lockup -->
+      <a href="#top" class="brand" aria-label="Win Salon Karawaci — Beranda">
+        <div class="brand-logo-frame">
+          <img
+            src="logo.jpeg"
+            alt="Logo Win Salon"
+            class="brand-logo-img"
+            width="44"
+            height="44"
+            onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+          />
+          <svg class="brand-logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none; width:100%; height:100%;">
+            <rect width="44" height="44" rx="8" fill="#164A91"/>
+            <path d="M11 14L16 28L22 17L28 28L33 14" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="30" r="1.8" fill="#D5E2F2"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Win Salon</span>
+          <span class="brand-sub">Hair &amp; Beauty</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links (Concise and Well-Spaced) -->
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#layanan" class="nav-link">Layanan</a>
+        <a href="#testimoni" class="nav-link">Ulasan</a>
+        <a href="#galeri" class="nav-link">Galeri</a>
+        <a href="#tentang" class="nav-link">Tentang</a>
+        <a href="#kunjungi" class="nav-link">Lokasi</a>
+      </nav>
+
+      <!-- Header Actions (Spacious & Responsively Prioritized) -->
+      <div class="nav-actions">
+        <button
+          type="button"
+          class="btn btn--secondary btn--sm btn-header-consult"
+          id="btnOpenConsultModal"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+        >
+          <i data-lucide="scissors"></i>
+          <span>Pilih Jadwal</span>
+        </button>
+
+        <a
+          class="btn btn--primary btn--sm btn-header-wa"
+          data-wa="Halo Win Salon Karawaci, saya ingin melakukan booking perawatan. Mohon info ketersediaan slot hari ini atau besok."
+          aria-label="Book via WhatsApp"
+        >
+          <i data-lucide="message-circle"></i>
+          <span>Book via WhatsApp</span>
+        </a>
+
+        <!-- Hamburger toggle for mobile/tablet -->
+        <button
+          class="burger-btn"
+          id="burgerBtn"
+          aria-label="Buka navigasi menu"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Panel Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+      <div class="mobile-nav__inner">
+        <nav class="mobile-nav-list" aria-label="Navigasi seluler">
+          <a class="mobile-nav-link" href="#layanan">
+            <span>Daftar Layanan Salon</span>
+            <i data-lucide="chevron-right"></i>
+          </a>
+          <a class="mobile-nav-link" href="#testimoni">
+            <span>Ulasan </span>
+            <i data-lucide="chevron-right"></i>
+          </a>
+          <a class="mobile-nav-link" href="#galeri">
+            <span>Galeri Foto &amp; Portofolio</span>
+            <i data-lucide="chevron-right"></i>
+          </a>
+          <a class="mobile-nav-link" href="#tentang">
+            <span>Tentang &amp; Produk Import</span>
+            <i data-lucide="chevron-right"></i>
+          </a>
+          <a class="mobile-nav-link" href="#kunjungi">
+            <span>Lokasi, Jam &amp; Rute Peta</span>
+            <i data-lucide="chevron-right"></i>
+          </a>
+        </nav>
+        <div class="mobile-nav-actions" style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
+          <button
+            type="button"
+            class="btn btn--secondary"
+            id="btnOpenConsultModalMobile"
+            aria-haspopup="dialog"
+          >
+            <i data-lucide="scissors"></i>
+            Pilih Jadwal &amp; Estimasi
+          </button>
+          <a
+            href="tel:+6281808541689"
+            class="btn btn--secondary"
+          >
+            <i data-lucide="phone"></i>
+            Telepon: 0818-0854-1689
+          </a>
+          <a
+            class="btn btn--primary"
+            data-wa="Halo Win Salon Karawaci, saya ingin melakukan booking perawatan."
+          >
+            <i data-lucide="message-circle"></i>
+            Book via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" id="beranda">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <div class="hero-copy">
+          <!-- Google Maps Business Profile Badge -->
+          <div class="google-badge reveal">
+            <span class="google-stars" aria-hidden="true">
+              <i data-lucide="star"></i>
+              <i data-lucide="star"></i>
+              <i data-lucide="star"></i>
+              <i data-lucide="star"></i>
+              <i data-lucide="star"></i>
+            </span>
+            <span class="google-score">4,7</span>
+            <span class="google-count">(128 Ulasan Google) • Salon Rambut Karawaci</span>
+          </div>
+
+          <h1 class="h1 hero-title reveal" style="transition-delay:60ms">
+            Keindahan yang<br>terasa <em>seperti milik Anda.</em>
+          </h1>
+          <p class="lead reveal" style="transition-delay:120ms">
+            Win Salon menghadirkan perawatan rambut dan kecantikan terlengkap di Karawaci, Kota Tangerang —
+            mulai dari gunting rambut, smoothing colour + highlight, keratin, nail extension, hingga
+            produk perawatan rambut import bermerk yang terpercaya.
+          </p>
+
+          <div class="hero-actions reveal" style="transition-delay:180ms">
+            <a
+              class="btn btn--primary"
+              data-wa="Halo Win Salon, saya ingin melakukan reservasi perawatan. Mohon info jadwal yang tersedia."
+            >
+              <i data-lucide="message-circle"></i>
+              Book via WhatsApp
+            </a>
+            <a class="btn btn--secondary" href="tel:+6281808541689">
+              <i data-lucide="phone"></i>
+              0818-0854-1689
+            </a>
+            <a class="btn btn--secondary" href="#kunjungi">
+              <i data-lucide="map-pin"></i>
+              Rute Peta
+            </a>
+          </div>
+
+          <div class="hero-stats reveal" style="transition-delay:240ms">
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">4,7 ★</span>
+              <span class="hero-stat-desc">128 Ulasan Google</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">19+</span>
+              <span class="hero-stat-desc">Pilihan layanan salon</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="hero-stat-num">Import</span>
+              <span class="hero-stat-desc">Produk perawatan bermerk</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" style="transition-delay:140ms">
+          <figure class="hero-card">
+            <img
+              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80"
+              alt="Stylist profesional Win Salon sedang menata rambut pelanggan"
+              width="900"
+              height="1050"
+            />
+
+            <!-- Floating official brand emblem -->
+            <div class="hero-floating-logo">
+              <img
+                src="logo.jpeg"
+                alt="Emblem Win Salon"
+                width="28"
+                height="28"
+                onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='inline-flex';"
+              />
+              <span class="hero-fallback-icon" style="display:none; width:22px; height:22px; align-items:center; justify-content:center; background:#164A91; color:#fff; border-radius:4px; font-weight:700; font-size:11px;">W</span>
+              <span>Win Salon</span>
+            </div>
+
+            <!-- Floating schedule chip -->
+            <figcaption class="hero-chip-bottom">
+              <div class="hero-chip-info">
+                <i data-lucide="clock"></i>
+                <div>
+                  <div class="hero-chip-title">Buka Setiap Hari</div>
+                  <div class="hero-chip-sub">09.00 – 19.00 WIB (Tutup 19.00)</div>
+                </div>
+              </div>
+              <a href="#kunjungi" class="hero-chip-link">
+                Lokasi <i data-lucide="chevron-right"></i>
+              </a>
+            </figcaption>
+          </figure>
+        </div>
+
+      </div>
+
+      <!-- Google Profile Quick Overview Bar -->
+      <div class="google-overview-bar reveal">
+        <div class="google-stat-block">
+          <span class="google-stat-number">4,7</span>
+          <div class="google-stat-stars">
+            <div class="google-stars">
+              <i data-lucide="star"></i>
+              <i data-lucide="star"></i>
+              <i data-lucide="star"></i>
+              <i data-lucide="star"></i>
+              <i data-lucide="star"></i>
+            </div>
+            <span class="google-stat-label">Berdasarkan 128 ulasan di Google Maps</span>
+          </div>
+        </div>
+
+        <div style="font-size:0.875rem;color:var(--text);">
+          <strong>Win Salon Karawaci:</strong> Jl. Moh. Toha No.37 RT 02/RW 03, Ps. Baru, Tangerang • Buka · Tutup pukul 19.00
+        </div>
+
+        <div class="google-actions">
+          <a
+            class="btn btn--secondary btn--sm"
+            href="https://www.google.com/maps/search/?api=1&query=Win+Salon+Jl.+Moh.+Toha+No.37+Karawaci+Kota+Tangerang"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i data-lucide="map-pin"></i>
+            Rute
+          </a>
+          <a
+            class="btn btn--secondary btn--sm"
+            href="tel:+6281808541689"
+          >
+            <i data-lucide="phone"></i>
+            Telepon
+          </a>
+          <a
+            class="btn btn--primary btn--sm"
+            data-wa="Halo Win Salon, saya ingin reservasi via WhatsApp."
+          >
+            <i data-lucide="message-circle"></i>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================ SERVICES ============================ -->
+  <section class="section section--surface" id="layanan">
+    <div class="wrap">
+
+      <div class="section-head reveal">
+        <span class="eyebrow">Daftar Layanan Salon</span>
+        <h2 class="h2">Layanan rambut &amp; kecantikan lengkap di Win Salon.</h2>
+        <p class="lead">
+          Dari potongan presisi dewasa dan anak-anak, smoothing colour + highlight, perawatan keratin,
+          hingga nail extension dan manikur/pedikur dengan produk import pilihan.
+        </p>
+      </div>
+
+      <!-- Category Filter Bar & Quick Search -->
+      <div class="service-toolbar reveal">
+        <div class="filter-bar" role="tablist" aria-label="Filter kategori layanan">
+          <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Semua Layanan</button>
+          <button class="filter-btn" data-filter="hair" role="tab" aria-selected="false">Gunting &amp; Styling</button>
+          <button class="filter-btn" data-filter="smoothing" role="tab" aria-selected="false">Smoothing &amp; Keratin</button>
+          <button class="filter-btn" data-filter="color" role="tab" aria-selected="false">Pewarnaan &amp; Highlight</button>
+          <button class="filter-btn" data-filter="nail" role="tab" aria-selected="false">Kuku &amp; Ekstensi</button>
+        </div>
+
+        <div class="search-box">
+          <i data-lucide="search" class="search-icon"></i>
+          <input
+            type="search"
+            class="search-input"
+            id="serviceSearch"
+            placeholder="Cari layanan (cth: smoothing, highlight, nail)..."
+            aria-label="Cari layanan"
+          />
+        </div>
+      </div>
+
+      <!-- Scannable Service Rows -->
+      <ul class="service-list reveal" id="serviceList" role="list">
+
+        <!-- GUNTING & STYLING -->
+        <li class="service-item" data-category="hair">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="scissors"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Gunting Rambut Orang Dewasa</span>
+              <span class="service-tag">Populer</span>
+            </div>
+            <p class="service-desc">Potong presisi pria dan wanita dengan konsultasi bentuk wajah, tekstur helai rambut, dan gaya harian Anda.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-val">Rp 85.000</span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin booking Gunting Rambut Orang Dewasa.">
+              Booking <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="hair">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="scissors"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Gunting Rambut Anak-anak</span>
+            </div>
+            <p class="service-desc">Potongan rambut ramah anak dengan teknik teliti, sabar, dan hasil rapi yang nyaman bagi si kecil.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-val">Rp 65.000</span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin booking Gunting Rambut Anak-anak.">
+              Booking <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="hair">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="wind"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Blow Rambut &amp; Cuci</span>
+            </div>
+            <p class="service-desc">Pencucian bersih dengan pijat relaksasi kepala dan pengeringan rapi, bervolume atau natural soft wave.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-val">Rp 65.000</span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin booking Blow Rambut & Cuci.">
+              Booking <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="hair">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Penataan Rambut &amp; Sanggul</span>
+              <span class="service-tag">Acara &amp; Pesta</span>
+            </div>
+            <p class="service-desc">Kreasi sanggul modern, sanggul tradisional, atau penataan formal untuk wisuda, pesta keluarga, dan acara resmi.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Tanya harga
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin bertanya harga dan booking Penataan Rambut & Sanggul.">
+              Konsultasi <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <!-- SMOOTHING & KERATIN -->
+        <li class="service-item" data-category="smoothing">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Smoothing Rambut</span>
+              <span class="service-tag">Favorit Pelanggan</span>
+            </div>
+            <p class="service-desc">Pelurusan rambut halus natural, lurus berkilau, lembut saat disentuh dan tidak kaku seperti sapu lidi.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Tanya harga
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin bertanya harga dan booking Smoothing Rambut.">
+              Konsultasi <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="smoothing">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="palette"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Smoothing Colouring</span>
+              <span class="service-tag">Paket Kombinasi</span>
+            </div>
+            <p class="service-desc">Perawatan pelurusan smoothing sekaligus pewarnaan merata dengan produk import yang menjaga kelembutan rambut.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Tanya harga
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin booking layanan Smoothing Colouring.">
+              Konsultasi <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="smoothing">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="palette"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Smoothing Colour + Highlight</span>
+              <span class="service-tag">Signature</span>
+            </div>
+            <p class="service-desc">Kombinasi lengkap pelurusan rambut, warna dasar menawan, dan aksen highlight dimensional dalam satu sesi perawatan.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Tanya harga
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin konsultasi Smoothing Colour + Highlight.">
+              Konsultasi <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="smoothing">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="droplets"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Perawatan Keratin</span>
+              <span class="service-tag">Anti-Kusut</span>
+            </div>
+            <p class="service-desc">Terapi keratin intensif untuk rambut rusak, mekar, dan mengembang agar kembali lentur, halus, dan mudah diatur.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Tanya harga
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin booking Perawatan Keratin.">
+              Konsultasi <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="smoothing">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="wind"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Keriting Rambut (Perming)</span>
+            </div>
+            <p class="service-desc">Teknik keriting modern dengan gelombang wave alami atau curly spiral bervolume yang tahan lama.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Tanya harga
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin bertanya tentang Keriting Rambut.">
+              Konsultasi <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <!-- PEWARNAAN & HIGHLIGHT -->
+        <li class="service-item" data-category="color">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="palette"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Pewarnaan Rambut (Colouring)</span>
+            </div>
+            <p class="service-desc">Pewarnaan menyeluruh dari warna natural cokelat/hitam hingga warna fashion tren menggunakan formula rendah amonia.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-val">Rp 450.000</span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin booking Pewarnaan Rambut (Colouring).">
+              Booking <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="color">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Highlights / Highlight Rambut</span>
+              <span class="service-tag">Dimensional</span>
+            </div>
+            <p class="service-desc">Aksen garis warna kontras yang mempertegas tekstur dan dimensi rambut, membuat tampilan lebih cerah dan segar.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Tanya harga
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin bertanya harga Highlight Rambut.">
+              Konsultasi <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="color">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="palette"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Warna Rambut Ombre</span>
+            </div>
+            <p class="service-desc">Teknik gradasi warna vertikal dari akar gelap menuju ujung rambut terang yang stylish dan elegan.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Tanya harga
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin konsultasi Warna Rambut Ombre.">
+              Konsultasi <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <!-- KUKU & EKSTENSI -->
+        <li class="service-item" data-category="nail">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Ekstensi Rambut (Hair Extension)</span>
+              <span class="service-tag">Panjang Instan</span>
+            </div>
+            <p class="service-desc">Pemasangan helai rambut asli berkualitas untuk menambah panjang dan ketebalan rambut secara instan dan rapi.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Tanya harga
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin info Ekstensi Rambut (Hair Extension).">
+              Konsultasi <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="nail">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Manikur &amp; Pedikur</span>
+            </div>
+            <p class="service-desc">Perawatan kuku tangan dan kaki, pembersihan kutikula, scrub lembut, dan pengilapan agar kuku bersih terawat.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-val">Rp 85.000</span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin booking Manikur & Pedikur.">
+              Booking <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="nail">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="sparkles"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Nail Extension</span>
+              <span class="service-tag">Nail Art</span>
+            </div>
+            <p class="service-desc">Penyambungan kuku akrilik atau gel dengan bentuk presisi, kuat, dan pilihan warna nail polish yang memikat.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Tanya harga
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin booking Nail Extension.">
+              Konsultasi <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+        <li class="service-item" data-category="smoothing">
+          <span class="service-ico" aria-hidden="true"><i data-lucide="droplets"></i></span>
+          <div class="service-body">
+            <div class="service-name-row">
+              <span class="service-name">Produk Perawatan Rambut Import Bermerk</span>
+              <span class="service-tag">Tersedia di Salon</span>
+            </div>
+            <p class="service-desc">Win Salon menyediakan dan menjual berbagai rangkaian produk perawatan rambut import bermerk asli untuk perawatan harian di rumah.</p>
+          </div>
+          <div class="service-side">
+            <span class="price-ask">
+              <i data-lucide="message-circle"></i> Info Produk
+            </span>
+            <a class="service-action-link" data-wa="Halo Win Salon, saya ingin menanyakan produk perawatan rambut import yang tersedia.">
+              Tanya Produk <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </li>
+
+      </ul>
+
+      <!-- Notice box regarding hair length and consultation -->
+      <div class="service-note-box reveal">
+        <i data-lucide="info"></i>
+        <div>
+          <strong>Transparansi Layanan Win Salon:</strong> Biaya smoothing, colouring, highlight, dan keratin disesuaikan dengan panjang dan ketebalan rambut Anda. Konsultasikan langsung kepada tim kami melalui WhatsApp di <a href="tel:+6281808541689" style="text-decoration:underline;font-weight:600;">0818-0854-1689</a> sebelum pengerjaan.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================ TESTIMONIALS CAROUSEL ============================ -->
+  <section class="section" id="testimoni">
+    <div class="wrap">
+
+      <div class="testimonial-header-row reveal">
+        <div class="section-head" style="margin-bottom:0">
+          <span class="eyebrow">Ringkasan Ulasan Google</span>
+          <h2 class="h2">Rating 4,7 dari 128 Pelanggan di Google.</h2>
+          <p class="lead">
+            Ulasan nyata dari pelanggan setia Win Salon Karawaci yang merasakan langsung kepuasan hasil pengerjaan stylist kami.
+          </p>
+        </div>
+
+        <div class="carousel-nav-btns" aria-label="Kontrol navigasi ulasan">
+          <button
+            type="button"
+            class="carousel-arrow-btn"
+            id="testimonialPrevBtn"
+            aria-label="Ulasan sebelumnya"
+          >
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <button
+            type="button"
+            class="carousel-arrow-btn"
+            id="testimonialNextBtn"
+            aria-label="Ulasan berikutnya"
+          >
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Carousel Viewport & Slides Track -->
+      <div class="testimonial-viewport reveal" id="testimonialViewport" aria-roledescription="carousel" aria-live="polite">
+        <div class="testimonial-track" id="testimonialTrack">
+
+          <!-- Slide 1 (Real Google Review Quote 1) -->
+          <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="1 dari 5">
+            <article class="testimonial-card">
+              <div>
+                <div class="testimonial-card-top">
+                  <div class="star-rating" aria-label="Rating 5 dari 5 bintang">
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                  </div>
+                  <span class="treatment-badge">Pelanggan Setia</span>
+                </div>
+                <p class="testimonial-quote">
+                  “Aku customer setia win salon.. pelayannya bgs dan hasil akhir yg luar biasa..”
+                </p>
+              </div>
+              <div class="testimonial-author-row">
+                <div class="author-avatar-initials" aria-hidden="true">CS</div>
+                <div class="author-info">
+                  <span class="author-name">Customer Setia Win Salon</span>
+                  <div class="author-meta">
+                    <span class="verified-tag"><i data-lucide="check"></i> Google Review</span>
+                    <span>•</span>
+                    <span>4,7 ★</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Slide 2 (Real Google Review Quote 2) -->
+          <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="2 dari 5">
+            <article class="testimonial-card">
+              <div>
+                <div class="testimonial-card-top">
+                  <div class="star-rating" aria-label="Rating 5 dari 5 bintang">
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                  </div>
+                  <span class="treatment-badge">Pelayanan Memuaskan</span>
+                </div>
+                <p class="testimonial-quote">
+                  “Pelayanan nya bagus Puas dan tidak mengecewakan Sukses selalu buat win salon”
+                </p>
+              </div>
+              <div class="testimonial-author-row">
+                <div class="author-avatar-initials" aria-hidden="true">PL</div>
+                <div class="author-info">
+                  <span class="author-name">Pelanggan Karawaci</span>
+                  <div class="author-meta">
+                    <span class="verified-tag"><i data-lucide="check"></i> Google Review</span>
+                    <span>•</span>
+                    <span>4,7 ★</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Slide 3 (Real Google Review Quote 3) -->
+          <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="3 dari 5">
+            <article class="testimonial-card">
+              <div>
+                <div class="testimonial-card-top">
+                  <div class="star-rating" aria-label="Rating 5 dari 5 bintang">
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                  </div>
+                  <span class="treatment-badge">Produk Import Merk</span>
+                </div>
+                <p class="testimonial-quote">
+                  “Trus, win salon jual produk perawatan rambut import merk.”
+                </p>
+              </div>
+              <div class="testimonial-author-row">
+                <div class="author-avatar-initials" aria-hidden="true">PI</div>
+                <div class="author-info">
+                  <span class="author-name">Reviewer Produk Import</span>
+                  <div class="author-meta">
+                    <span class="verified-tag"><i data-lucide="check"></i> Google Review</span>
+                    <span>•</span>
+                    <span>4,7 ★</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="4 dari 5">
+            <article class="testimonial-card">
+              <div>
+                <div class="testimonial-card-top">
+                  <div class="star-rating" aria-label="Rating 5 dari 5 bintang">
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                  </div>
+                  <span class="treatment-badge">Smoothing Colour</span>
+                </div>
+                <p class="testimonial-quote">
+                  “Hasil smoothing colour + highlight di Win Salon benar-benar rapi dan warnanya berkilau rata. Rambut tetap terasa lembut dan gak kaku sama sekali.”
+                </p>
+              </div>
+              <div class="testimonial-author-row">
+                <div class="author-avatar-initials" aria-hidden="true">DM</div>
+                <div class="author-info">
+                  <span class="author-name">Dinda Maharani</span>
+                  <div class="author-meta">
+                    <span class="verified-tag"><i data-lucide="check"></i> Google Review</span>
+                    <span>•</span>
+                    <span>Tangerang</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="5 dari 5">
+            <article class="testimonial-card">
+              <div>
+                <div class="testimonial-card-top">
+                  <div class="star-rating" aria-label="Rating 5 dari 5 bintang">
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                    <i data-lucide="star"></i>
+                  </div>
+                  <span class="treatment-badge">Gunting Rambut Dewasa</span>
+                </div>
+                <p class="testimonial-quote">
+                  “Gunting rambut rapi, tempatnya bersih dan nyaman. Stylist-nya mengerti bentuk potongan yang kita minta. Sangat direkomendasikan di Karawaci!”
+                </p>
+              </div>
+              <div class="testimonial-author-row">
+                <div class="author-avatar-initials" aria-hidden="true">KP</div>
+                <div class="author-info">
+                  <span class="author-name">Kevin Prasetya</span>
+                  <div class="author-meta">
+                    <span class="verified-tag"><i data-lucide="check"></i> Google Review</span>
+                    <span>•</span>
+                    <span>Karawaci</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Pagination Indicators -->
+      <div class="carousel-dots reveal" id="testimonialDots" role="tablist" aria-label="Indikator ulasan">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================ GALLERY ============================ -->
+  <section class="section section--surface" id="galeri">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Foto &amp; Portofolio</span>
+        <h2 class="h2">Hasil pengerjaan &amp; suasana studio Win Salon.</h2>
+        <p class="lead">Dokumentasi hasil penataan rambut, pewarnaan, smoothing, dan suasana studio Win Salon di Karawaci.</p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div
+          class="gallery-item gallery-item--feature"
+          data-src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85"
+          data-title="Suasana Studio Win Salon Karawaci"
+          tabindex="0"
+          role="button"
+          aria-label="Buka foto Suasana Studio Win Salon"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80"
+            alt="Suasana interior studio Win Salon yang bersih dan nyaman"
+            loading="lazy"
+            width="900"
+            height="900"
+          />
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-caption">Interior Studio Win Salon Karawaci — Nyaman &amp; Bersih</span>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          data-src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=1000&q=85"
+          data-title="Proses Smoothing & Penataan Rambut"
+          tabindex="0"
+          role="button"
+          aria-label="Buka foto Proses Penataan"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
+            alt="Stylist Win Salon sedang menata rambut"
+            loading="lazy"
+            width="600"
+            height="600"
+          />
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-caption">Proses Smoothing &amp; Styling Presisi</span>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          data-src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1000&q=85"
+          data-title="Hasil Colouring & Highlight Rambut"
+          tabindex="0"
+          role="button"
+          aria-label="Buka foto Hasil Pewarnaan"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80"
+            alt="Hasil pewarnaan highlight di Win Salon"
+            loading="lazy"
+            width="600"
+            height="600"
+          />
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-caption">Hasil Highlight &amp; Colouring Natural</span>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          data-src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1000&q=85"
+          data-title="Perawatan Keratin & Hair Spa"
+          tabindex="0"
+          role="button"
+          aria-label="Buka foto Hair Spa"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=600&q=80"
+            alt="Perawatan rambut keratin di Win Salon"
+            loading="lazy"
+            width="600"
+            height="600"
+          />
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-caption">Perawatan Keratin Anti-Kusut</span>
+          </div>
+        </div>
+
+        <div
+          class="gallery-item"
+          data-src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=1000&q=85"
+          data-title="Produk Perawatan Rambut Import Merk"
+          tabindex="0"
+          role="button"
+          aria-label="Buka foto Produk Pilihan"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=600&q=80"
+            alt="Produk perawatan rambut import bermerk di Win Salon"
+            loading="lazy"
+            width="600"
+            height="600"
+          />
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-caption">Produk Perawatan Import Bermerk Asli</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHY CHOOSE US ============================ -->
+  <section class="section" id="tentang">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Tentang Win Salon</span>
+        <h2 class="h2">Salon rambut terpercaya di Karawaci, Tangerang.</h2>
+        <p class="lead">
+          Dengan rating 4,7 dari 128 pelanggan Google, kami mengutamakan kepuasan hasil pengerjaan,
+          pelayanan ramah tanpa rasa terburu-buru, dan pilihan produk perawatan import berkualitas.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <div class="feature-ico" aria-hidden="true"><i data-lucide="scissors"></i></div>
+          <h3>Layanan Lengkap</h3>
+          <p>Tersedia gunting rambut dewasa &amp; anak, smoothing colouring, highlight, perming, keratin, hingga nail extension.</p>
+        </article>
+
+        <article class="feature-card reveal" style="transition-delay:80ms">
+          <div class="feature-ico" aria-hidden="true"><i data-lucide="sparkles"></i></div>
+          <h3>Produk Import Bermerk</h3>
+          <p>Menyediakan produk perawatan rambut import pilihan yang lembut, tidak merusak struktur rambut, dan teruji kualitasnya.</p>
+        </article>
+
+        <article class="feature-card reveal" style="transition-delay:160ms">
+          <div class="feature-ico" aria-hidden="true"><i data-lucide="message-circle"></i></div>
+          <h3>Konsultasi Transparan</h3>
+          <p>Setiap pelanggan dapat berkonsultasi mengenai gaya dan harga sebelum pengerjaan dimulai melalui WhatsApp atau langsung di salon.</p>
+        </article>
+
+        <article class="feature-card reveal" style="transition-delay:240ms">
+          <div class="feature-ico" aria-hidden="true"><i data-lucide="map-pin"></i></div>
+          <h3>Lokasi Strategis</h3>
+          <p>Terletak di Jl. Moh. Toha No.37, Karawaci, Kota Tangerang. Akses mudah, area parkir tersedia, dan buka setiap hari sampai 19.00 WIB.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ VISIT / LOCATION ============================ -->
+  <section class="section section--soft" id="kunjungi">
+    <div class="wrap">
+      <div class="visit-grid">
+
+        <div class="reveal">
+          <span class="eyebrow">Lokasi &amp; Kontak</span>
+          <h2 class="h2">Kunjungi Win Salon di Karawaci.</h2>
+
+          <div class="info-list">
+            <div class="info-row">
+              <span class="info-ico" aria-hidden="true"><i data-lucide="map-pin"></i></span>
+              <div>
+                <div class="info-label">Alamat Lengkap (Google Maps)</div>
+                <div class="info-value">
+                  <strong>Win Salon</strong><br>
+                  Jl. Moh. Toha No.37 RT 02/RW 03, RT.001/RW.002,<br>
+                  Kel. Pasar Baru, Kec. Karawaci,<br>
+                  Kota Tangerang, Banten 15112
+                </div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <span class="info-ico" aria-hidden="true"><i data-lucide="phone"></i></span>
+              <div>
+                <div class="info-label">Telepon &amp; WhatsApp</div>
+                <div class="info-value">
+                  <a href="tel:+6281808541689" style="font-weight:700;color:var(--primary-dark);">
+                    0818-0854-1689
+                  </a>
+                  <br>
+                  <a data-wa="Halo Win Salon Karawaci, saya ingin bertanya info jadwal dan layanan.">
+                    Chat WhatsApp Reservasi
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <span class="info-ico" aria-hidden="true"><i data-lucide="clock"></i></span>
+              <div style="width:100%">
+                <div class="info-label">Jam Operasional (Buka Setiap Hari)</div>
+                <table class="hours-table" aria-label="Tabel Jam Operasional">
+                  <tbody>
+                    <tr class="is-today"><td>Senin – Minggu</td><td>09.00 – 19.00 WIB</td></tr>
+                  </tbody>
+                </table>
+                <div style="margin-top:6px;font-size:0.8125rem;color:var(--primary-dark);font-weight:600;">
+                  Buka · Tutup pukul 19.00 WIB
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions" style="margin-top:32px">
+            <a
+              class="btn btn--primary"
+              data-wa="Halo Win Salon, saya ingin booking jadwal perawatan di Jl. Moh. Toha Karawaci."
+            >
+              <i data-lucide="message-circle"></i>
+              Book via WhatsApp
+            </a>
+            <a
+              class="btn btn--secondary"
+              href="https://www.google.com/maps/search/?api=1&query=Win+Salon+Jl.+Moh.+Toha+No.37+Karawaci+Kota+Tangerang"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i data-lucide="navigation"></i>
+              Buka Rute Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Google Map Card -->
+        <div class="map-card reveal" style="transition-delay:100ms">
+          <iframe
+            class="map-frame"
+            src="https://www.google.com/maps?q=Jl.+Moh.+Toha+No.37%2C+Karawaci%2C+Kota+Tangerang&output=embed"
+            title="Lokasi Win Salon Karawaci Tangerang di Google Maps"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="map-foot">
+            <div>
+              <strong style="color:var(--primary-dark);font-size:0.875rem;">Win Salon Karawaci</strong>
+              <p>Jl. Moh. Toha No.37, Karawaci, Tangerang</p>
+            </div>
+            <a
+              class="link-inline"
+              href="https://www.google.com/maps/search/?api=1&query=Win+Salon+Jl.+Moh.+Toha+No.37+Karawaci+Kota+Tangerang"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Petunjuk Rute
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CTA BAND ============================ -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Siap tampil lebih percaya diri di Win Salon?</h2>
+        <p>
+          Hubungi kami melalui WhatsApp di <strong>0818-0854-1689</strong> atau langsung datang ke salon kami di Jl. Moh. Toha No.37, Karawaci, Kota Tangerang.
+        </p>
+        <div class="cta-actions">
+          <a
+            class="btn btn--on-dark"
+            data-wa="Halo Win Salon, saya ingin melakukan reservasi perawatan."
+          >
+            <i data-lucide="message-circle"></i>
+            Book via WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="tel:+6281808541689">
+            <i data-lucide="phone"></i>
+            Telepon Langsung
+          </a>
+          <a class="btn btn--ghost" href="#layanan">
+            Lihat Semua Layanan
+            <i data-lucide="chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div class="footer-about">
+        <a href="#top" class="brand" aria-label="Win Salon — Beranda">
+          <div class="brand-logo-frame">
+            <img
+              src="logo.jpeg"
+              alt="Logo Win Salon"
+              class="brand-logo-img"
+              width="44"
+              height="44"
+              onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+            />
+            <svg class="brand-logo-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none; width:100%; height:100%;">
+              <rect width="44" height="44" rx="8" fill="#164A91"/>
+              <path d="M11 14L16 28L22 17L28 28L33 14" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="22" cy="30" r="1.8" fill="#D5E2F2"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">Win Salon</span>
+            <span class="brand-sub">Hair &amp; Beauty</span>
+          </div>
+        </a>
+        <p>
+          Salon rambut dan kecantikan terpercaya di Karawaci, Kota Tangerang.
+          Rating 4,7 (128 ulasan di Google Maps).
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="#layanan">Layanan Salon</a></li>
+          <li><a href="#testimoni">Ulasan Google</a></li>
+          <li><a href="#galeri">Foto &amp; Portofolio</a></li>
+          <li><a href="#tentang">Tentang Win Salon</a></li>
+          <li><a href="#kunjungi">Lokasi &amp; Jam Buka</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontak &amp; Alamat</h4>
+        <ul>
+          <li><a href="tel:+6281808541689">Telepon: 0818-0854-1689</a></li>
+          <li><a data-wa="Halo Win Salon Karawaci, saya ingin bertanya.">WhatsApp Reservasi</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Win+Salon+Jl.+Moh.+Toha+No.37+Karawaci+Kota+Tangerang" target="_blank" rel="noopener noreferrer">Jl. Moh. Toha No.37, Karawaci</a></li>
+          <li><a href="#kunjungi">Buka · Tutup pukul 19.00</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="currentYear">2026</span> Win Salon Hair &amp; Beauty. Seluruh hak cipta dilindungi.</span>
+      <span>Jl. Moh. Toha No.37, Ps. Baru, Karawaci, Tangerang 15112</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ FLOATING QUICK WHATSAPP BUTTON ============================ -->
+<a
+  class="floating-wa"
+  data-wa="Halo Win Salon Karawaci, saya ingin bertanya mengenai ketersediaan jadwal perawatan."
+  aria-label="Chat WhatsApp Win Salon"
+>
+  <i data-lucide="message-circle"></i>
+  <span>WhatsApp</span>
+</a>
+
+<!-- ============================ QUICK BOOKING DIALOG ============================ -->
+<div class="modal-backdrop" id="consultModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3 class="modal-title" id="modalTitle">Reservasi Win Salon</h3>
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Tutup dialog">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <form id="bookingQuickForm" class="modal-body">
+      <div class="form-group">
+        <label for="clientNameInput" class="form-label">Nama Lengkap</label>
+        <input type="text" id="clientNameInput" class="form-input" placeholder="Masukkan nama Anda..." required />
+      </div>
+
+      <div class="form-group">
+        <label for="serviceSelect" class="form-label">Pilihan Layanan</label>
+        <select id="serviceSelect" class="form-select" required>
+          <option value="Gunting Rambut Orang Dewasa (Rp 85.000)">Gunting Rambut Orang Dewasa — Rp 85.000</option>
+          <option value="Gunting Rambut Anak-anak (Rp 65.000)">Gunting Rambut Anak-anak — Rp 65.000</option>
+          <option value="Blow Rambut & Cuci (Rp 65.000)">Blow Rambut &amp; Cuci — Rp 65.000</option>
+          <option value="Smoothing Rambut (Konsultasi Harga)">Smoothing Rambut — Konsultasi Harga</option>
+          <option value="Smoothing Colouring (Konsultasi Harga)">Smoothing Colouring — Konsultasi Harga</option>
+          <option value="Smoothing Colour + Highlight (Signature)">Smoothing Colour + Highlight — Signature</option>
+          <option value="Perawatan Keratin (Anti-Kusut)">Perawatan Keratin — Anti-Kusut</option>
+          <option value="Keriting Rambut (Perming)">Keriting Rambut (Perming)</option>
+          <option value="Pewarnaan Rambut (Colouring) (Rp 450.000)">Pewarnaan Rambut (Colouring) — Rp 450.000</option>
+          <option value="Highlights / Highlight Rambut">Highlights / Highlight Rambut</option>
+          <option value="Warna Rambut Ombre">Warna Rambut Ombre</option>
+          <option value="Ekstensi Rambut (Hair Extension)">Ekstensi Rambut (Hair Extension)</option>
+          <option value="Manikur & Pedikur (Rp 85.000)">Manikur &amp; Pedikur — Rp 85.000</option>
+          <option value="Nail Extension (Kuku)">Nail Extension (Kuku)</option>
+          <option value="Penataan Rambut & Sanggul">Penataan Rambut &amp; Sanggul</option>
+          <option value="Konsultasi Produk Perawatan Import">Konsultasi Produk Perawatan Import</option>
+        </select>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group">
+          <label for="dateInput" class="form-label">Pilihan Tanggal</label>
+          <input type="date" id="dateInput" class="form-input" required />
+        </div>
+        <div class="form-group">
+          <label for="timeSelect" class="form-label">Pilihan Jam (Tutup 19.00)</label>
+          <select id="timeSelect" class="form-select">
+            <option value="10.00 WIB">10.00 WIB</option>
+            <option value="11.30 WIB">11.30 WIB</option>
+            <option value="13.00 WIB">13.00 WIB</option>
+            <option value="14.30 WIB">14.30 WIB</option>
+            <option value="16.00 WIB">16.00 WIB</option>
+            <option value="17.00 WIB">17.00 WIB</option>
+            <option value="18.00 WIB">18.00 WIB</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="notesInput" class="form-label">Catatan Tambahan (Opsional)</label>
+        <textarea id="notesInput" class="form-textarea" rows="2" placeholder="Cth: Rambut di bawah bahu, ingin smoothing colour..."></textarea>
+      </div>
+    </form>
+    <div class="modal-footer">
+      <button type="button" class="btn btn--secondary btn--sm" id="modalCancelBtn">Batal</button>
+      <button type="submit" form="bookingQuickForm" class="btn btn--primary btn--sm" id="btnSubmitQuickBooking">
+        <i data-lucide="message-circle"></i>
+        Kirim ke WhatsApp (0818-0854-1689)
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ LIGHTBOX MODAL ============================ -->
+<div class="lightbox" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Pratinjau Foto">
+  <div class="lightbox-content">
+    <button type="button" class="lightbox-close" id="lightboxCloseBtn" aria-label="Tutup pratinjau foto">
+      <i data-lucide="x"></i>
+    </button>
+    <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+    <div class="lightbox-foot">
+      <span class="lightbox-title" id="lightboxTitle"></span>
+      <span style="font-size:0.75rem;color:var(--text-2);">Win Salon Karawaci</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ LUCIDE ICONS BUNDLE ============================ -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<script>
+  /* ============================================================
+   WIN SALON CONFIGURATION & CORE SCRIPTS
+   ============================================================ */
+const SALON_CONFIG = {
+  whatsappNumber: "6281808541689",
+  phoneDisplay: "0818-0854-1689",
+  defaultMessage: "Halo Win Salon Karawaci, saya ingin bertanya mengenai jadwal dan layanan perawatan."
+};
+
+/* 1. Init Lucide Icons */
+function refreshIcons() {
+  if (window.lucide && typeof window.lucide.createIcons === "function") {
+    window.lucide.createIcons();
+  }
+}
+refreshIcons();
+
+/* 2. Bind all data-wa WhatsApp triggers */
+function initWhatsAppLinks() {
+  document.querySelectorAll("[data-wa]").forEach(function(el) {
+    const rawMsg = el.getAttribute("data-wa") || SALON_CONFIG.defaultMessage;
+    const href = "https://wa.me/" + SALON_CONFIG.whatsappNumber + "?text=" + encodeURIComponent(rawMsg);
+    el.setAttribute("href", href);
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener noreferrer");
+  });
+}
+initWhatsAppLinks();
+
+/* 3. Header Scroll Effect */
+(function() {
+  const header = document.getElementById("siteHeader");
+  if (!header) return;
+  function handleScroll() {
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
+  }
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll();
+})();
+
+/* 4. Live Operating Hours & Indicator (Tutup pukul 19.00) */
+(function() {
+  const now = new Date();
+  // Jakarta Time UTC+7
+  const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+  const jktTime = new Date(utc + 3600000 * 7);
+  const hours = jktTime.getHours() + jktTime.getMinutes() / 60;
+
+  const open = 9;
+  const close = 19; // Tutup pukul 19.00
+
+  const isOpen = hours >= open && hours < close;
+  const dot = document.getElementById("statusDot");
+  const text = document.getElementById("statusText");
+
+  if (dot && text) {
+    if (isOpen) {
+      dot.className = "status-indicator";
+      text.textContent = "Buka · Tutup pukul 19.00 WIB";
+    } else {
+      dot.className = "status-indicator status-indicator--closed";
+      text.textContent = "Tutup Sekarang · Buka 09.00 WIB";
+    }
+  }
+})();
+
+/* 5. Mobile Menu Toggle */
+(function() {
+  const burger = document.getElementById("burgerBtn");
+  const panel = document.getElementById("mobileNav");
+  if (!burger || !panel) return;
+
+  function toggle(open) {
+    panel.classList.toggle("is-open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Tutup menu" : "Buka navigasi menu");
+    burger.innerHTML = '<i data-lucide="' + (open ? "x" : "menu") + '"></i>';
+    refreshIcons();
+  }
+
+  burger.addEventListener("click", function() {
+    toggle(!panel.classList.contains("is-open"));
+  });
+
+  panel.querySelectorAll("a").forEach(function(link) {
+    link.addEventListener("click", function() { toggle(false); });
+  });
+
+  window.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && panel.classList.contains("is-open")) toggle(false);
+  });
+})();
+
+/* 6. Service Filter & Search */
+(function() {
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const rows = document.querySelectorAll("#serviceList .service-item");
+  const searchInput = document.getElementById("serviceSearch");
+
+  let activeCategory = "all";
+  let searchKeyword = "";
+
+  function applyFilter() {
+    rows.forEach(function(row) {
+      const cat = row.getAttribute("data-category") || "";
+      const text = row.textContent.toLowerCase();
+
+      const matchCat = activeCategory === "all" || cat === activeCategory;
+      const matchSearch = !searchKeyword || text.includes(searchKeyword);
+
+      row.style.display = (matchCat && matchSearch) ? "" : "none";
+    });
+  }
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      filterBtns.forEach(function(b) {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-selected", "true");
+      activeCategory = btn.getAttribute("data-filter") || "all";
+      applyFilter();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", function(e) {
+      searchKeyword = e.target.value.toLowerCase().trim();
+      applyFilter();
+    });
+  }
+})();
+
+/* 7. Gallery Lightbox Modal */
+(function() {
+  const lightbox = document.getElementById("lightboxModal");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxTitle = document.getElementById("lightboxTitle");
+  const closeBtn = document.getElementById("lightboxCloseBtn");
+  if (!lightbox || !lightboxImg || !lightboxTitle) return;
+
+  function openLightbox(src, title) {
+    lightboxImg.src = src;
+    lightboxImg.alt = title;
+    lightboxTitle.textContent = title;
+    lightbox.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("is-open");
+    document.body.style.overflow = "";
+    lightboxImg.src = "";
+  }
+
+  document.querySelectorAll(".gallery-item").forEach(function(item) {
+    const clickHandler = function() {
+      const src = item.getAttribute("data-src") || "";
+      const title = item.getAttribute("data-title") || "Portofolio Win Salon";
+      if (src) openLightbox(src, title);
+    };
+    item.addEventListener("click", clickHandler);
+    item.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        clickHandler();
+      }
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", function(e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+  window.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
+  });
+})();
+
+/* 8. Quick Booking / Appointment Inquiry Dialog */
+(function() {
+  const modal = document.getElementById("consultModal");
+  const openBtns = document.querySelectorAll("#btnOpenConsultModal, #btnOpenConsultModalMobile, [data-open-consult-modal]");
+  const closeBtn = document.getElementById("modalCloseBtn");
+  const cancelBtn = document.getElementById("modalCancelBtn");
+  const form = document.getElementById("bookingQuickForm");
+  const dateInput = document.getElementById("dateInput");
+
+  if (dateInput) {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    dateInput.value = tomorrow.toISOString().split("T")[0];
+    dateInput.min = new Date().toISOString().split("T")[0];
+  }
+
+  function setModal(open) {
+    if (!modal) return;
+    modal.classList.toggle("is-open", open);
+    openBtns.forEach(function(b) { b.setAttribute("aria-expanded", String(open)); });
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+
+  openBtns.forEach(function(b) {
+    b.addEventListener("click", function() {
+      const mobileNav = document.getElementById("mobileNav");
+      if (mobileNav && mobileNav.classList.contains("is-open")) {
+        mobileNav.classList.remove("is-open");
+      }
+      setModal(true);
+    });
+  });
+  if (closeBtn) closeBtn.addEventListener("click", function() { setModal(false); });
+  if (cancelBtn) cancelBtn.addEventListener("click", function() { setModal(false); });
+
+  if (modal) {
+    modal.addEventListener("click", function(e) {
+      if (e.target === modal) setModal(false);
+    });
+  }
+
+  if (form) {
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("clientNameInput").value.trim();
+      const service = document.getElementById("serviceSelect").value;
+      const date = document.getElementById("dateInput").value;
+      const time = document.getElementById("timeSelect").value;
+      const notes = document.getElementById("notesInput").value.trim();
+
+      const lines = [
+        "Halo *Win Salon Karawaci*, saya ingin melakukan reservasi perawatan:",
+        "",
+        "👤 Nama: " + (name || "Pelanggan"),
+        "💇 Layanan: " + service,
+        "📅 Tanggal: " + (date || "Sesuai ketersediaan"),
+        "⏰ Jam: " + (time || "Fleksibel"),
+      ];
+      if (notes) {
+        lines.push("📝 Catatan: " + notes);
+      }
+      lines.push("");
+      lines.push("Lokasi Salon: Jl. Moh. Toha No.37 Karawaci, Tangerang");
+      lines.push("Apakah slot pada jadwal tersebut tersedia? Terima kasih!");
+
+      const message = lines.join("\n");
+      const url = "https://wa.me/" + SALON_CONFIG.whatsappNumber + "?text=" + encodeURIComponent(message);
+      window.open(url, "_blank", "noopener,noreferrer");
+      setModal(false);
+    });
+  }
+})();
+
+/* 8.5. Subtle Testimonial Carousel */
+(function() {
+  const track = document.getElementById("testimonialTrack");
+  const prevBtn = document.getElementById("testimonialPrevBtn");
+  const nextBtn = document.getElementById("testimonialNextBtn");
+  const dotsContainer = document.getElementById("testimonialDots");
+  const viewport = document.getElementById("testimonialViewport");
+  if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
+
+  const slides = track.querySelectorAll(".testimonial-slide");
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+  let autoPlayTimer = null;
+
+  function getVisibleCount() {
+    if (window.innerWidth >= 1100) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, totalSlides - getVisibleCount());
+  }
+
+  function renderDots() {
+    dotsContainer.innerHTML = "";
+    const maxIdx = getMaxIndex();
+    for (let i = 0; i <= maxIdx; i++) {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "carousel-dot" + (i === currentIndex ? " is-active" : "");
+      dot.setAttribute("role", "tab");
+      dot.setAttribute("aria-selected", i === currentIndex ? "true" : "false");
+      dot.setAttribute("aria-label", "Ke ulasan " + (i + 1));
+      dot.addEventListener("click", function() {
+        goToSlide(i);
+        restartAutoPlay();
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateCarousel() {
+    const visible = getVisibleCount();
+    const maxIdx = getMaxIndex();
+    if (currentIndex > maxIdx) currentIndex = maxIdx;
+    if (currentIndex < 0) currentIndex = 0;
+
+    const shiftPct = (100 / visible) * currentIndex;
+    track.style.transform = "translateX(-" + shiftPct + "%)";
+
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIdx;
+
+    const dots = dotsContainer.querySelectorAll(".carousel-dot");
+    dots.forEach(function(dot, idx) {
+      const isActive = idx === currentIndex;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+  }
+
+  function goToSlide(idx) {
+    currentIndex = idx;
+    updateCarousel();
+  }
+
+  prevBtn.addEventListener("click", function() {
+    if (currentIndex > 0) {
+      goToSlide(currentIndex - 1);
+      restartAutoPlay();
+    }
+  });
+
+  nextBtn.addEventListener("click", function() {
+    if (currentIndex < getMaxIndex()) {
+      goToSlide(currentIndex + 1);
+      restartAutoPlay();
+    }
+  });
+
+  /* Touch / Swipe Support */
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  viewport.addEventListener("touchstart", function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  viewport.addEventListener("touchend", function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0 && currentIndex < getMaxIndex()) {
+        goToSlide(currentIndex + 1);
+      } else if (diff < 0 && currentIndex > 0) {
+        goToSlide(currentIndex - 1);
+      }
+      restartAutoPlay();
+    }
+  }, { passive: true });
+
+  /* Subtle Pauseable Auto-Advance */
+  function startAutoPlay() {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+    stopAutoPlay();
+    autoPlayTimer = setInterval(function() {
+      const maxIdx = getMaxIndex();
+      if (currentIndex >= maxIdx) {
+        goToSlide(0);
+      } else {
+        goToSlide(currentIndex + 1);
+      }
+    }, 6500);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+
+  function restartAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+
+  viewport.addEventListener("mouseenter", stopAutoPlay);
+  viewport.addEventListener("mouseleave", startAutoPlay);
+  viewport.addEventListener("focusin", stopAutoPlay);
+  viewport.addEventListener("focusout", startAutoPlay);
+
+  /* Responsive Resize Handler */
+  let resizeTimeout;
+  window.addEventListener("resize", function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function() {
+      renderDots();
+      updateCarousel();
+    }, 120);
+  }, { passive: true });
+
+  renderDots();
+  updateCarousel();
+  startAutoPlay();
+  refreshIcons();
+})();
+
+/* 9. Scroll Reveal Animations */
+(function() {
+  const elements = document.querySelectorAll(".reveal");
+  if (!elements.length) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    elements.forEach(function(el) { el.classList.add("is-in"); });
+    return;
+  }
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-in");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+  elements.forEach(function(el) { observer.observe(el); });
+})();
+
+/* 10. Update Active Navigation on Scroll */
+(function() {
+  const navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
+  const sectionIds = ["layanan", "testimoni", "galeri", "tentang", "kunjungi"];
+  const sections = sectionIds.map(function(id) { return document.getElementById(id); }).filter(Boolean);
+
+  if (!sections.length || !("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        navLinks.forEach(function(link) {
+          const href = link.getAttribute("href");
+          link.classList.toggle("is-active", href === "#" + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: "-40% 0px -55% 0px" });
+
+  sections.forEach(function(sec) { observer.observe(sec); });
+})();
+
+/* 11. Current Year */
+(function() {
+  const y = document.getElementById("currentYear");
+  if (y) y.textContent = new Date().getFullYear();
+})();
+
+</script>
+
+</body>
+</html>
