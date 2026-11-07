@@ -25,7 +25,7 @@ const year = new Date().getFullYear();
             class="mt-4 inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white hover:bg-accent-deep"
           >
             <Mail class="h-4 w-4" />
-            hello@nacode.id
+            nazrilacil04@gmail.com
           </a>
         </div>
 
