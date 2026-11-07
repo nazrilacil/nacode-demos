@@ -1,0 +1,10 @@
+{
+  "name": "AKA Beauty Studio",
+  "slug": "aka-studio-01",
+  "category": "Beauty & Salon",
+  "description": "Website profil salon studio modern di , Malang. Menampilkan daftar harga, galeri, dan booking langsung via WhatsApp.",
+  "url": "/demos/AKA/index.html",
+  "thumbnail": "/images/aka-01.webp",
+  "status": "Available",
+  "featured": false
+}
