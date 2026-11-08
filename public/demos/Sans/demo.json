@@ -1,0 +1,10 @@
+{
+  "name": "San's Salon Bandung",
+  "slug": "sans-salon",
+  "category": "Beauty & Salon",
+  "description": "Minimalist luxury salon website featuring a bento-grid gallery, elegant serif typography, and seamless WhatsApp booking.",
+  "url": "/demos/Sans/index.html",
+  "thumbnail": "/images/sans-salon.webp",
+  "status": "Available",
+  "featured": true
+}
