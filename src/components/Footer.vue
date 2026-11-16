@@ -32,7 +32,7 @@ const year = new Date().getFullYear();
         <div>
           <h3 class="font-display text-sm font-semibold text-ink">Terhubung</h3>
           <div class="mt-3 flex gap-2">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+            <a href="https://instagram.com/nacode77" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
                class="rounded-lg p-2 text-ink-soft ring-1 ring-slate-200 hover:bg-slate-50">
               <Instagram class="h-4 w-4" />
             </a>
