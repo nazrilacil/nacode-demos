@@ -42,7 +42,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll));
 
       <div class="hidden md:block">
         <a
-          href="mailto:hello@nacode.id?subject=Project%20Inquiry"
+          href="mailto:nacodestudio0@gmail.com?subject=Project%20Inquiry"
           class="inline-flex items-center rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition hover:bg-accent-deep"
         >
           Contact
