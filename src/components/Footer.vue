@@ -21,11 +21,11 @@ const year = new Date().getFullYear();
           <h3 class="font-display text-sm font-semibold text-ink">Mari bekerja sama</h3>
           <p class="mt-2 text-sm text-ink-mute">Punya ide project? Ceritakan kebutuhan Anda.</p>
           <a
-            href="mailto:hello@nacode.id?subject=Project%20Inquiry"
+            href="mailto:nacodestudio0@gmail.com?subject=Project%20Inquiry"
             class="mt-4 inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white hover:bg-accent-deep"
           >
             <Mail class="h-4 w-4" />
-            nazrilacil04@gmail.com
+            nacodestudio0@gmail.com
           </a>
         </div>
 
